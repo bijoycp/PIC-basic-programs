@@ -1,0 +1,18 @@
+_LCD_STROBE: CODE, 575 0 16
+_lcd_puts: CODE, 670 0 43
+___ftpack: CODE, 1190 0 123
+_main: CODE, 1611 0 199
+___lwtoft: CODE, 610 0 27
+_DelayMs: CODE, 637 0 33
+___lwdiv: CODE, 1034 0 78
+_lcd_goto: CODE, 961 0 73
+_init_adc: CODE, 564 0 11
+___lwmod: CODE, 822 0 68
+_read_adc: CODE, 761 0 61
+___ftmul: CODE, 1810 0 238
+_itoa: CODE, 713 0 48
+_send: CODE, 890 0 71
+___fttol: CODE, 1445 0 166
+_utoa: CODE, 1313 0 132
+_lcd_init: CODE, 1112 0 78
+Total: 1465

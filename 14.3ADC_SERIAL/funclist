@@ -1,0 +1,11 @@
+_delay: CODE, 1472 0 28
+_sci_init: CODE, 1444 0 28
+_main: CODE, 1733 0 315
+_DelayMs: CODE, 1500 0 29
+_sci_puts: CODE, 1529 0 40
+_sci_putch: CODE, 1433 0 11
+___lwdiv: CODE, 1660 0 73
+_read_adc: CODE, 1610 0 50
+_adc_init: CODE, 1424 0 9
+___wmul: CODE, 1569 0 41
+Total: 624
