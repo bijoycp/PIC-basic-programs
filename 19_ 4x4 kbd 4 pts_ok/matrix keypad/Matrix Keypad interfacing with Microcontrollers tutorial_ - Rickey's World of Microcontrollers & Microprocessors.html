@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)https://www.8051projects.net/keypad-interfacing/introduction.php -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Matrix Keypad interfacing with Microcontrollers tutorial: - Rickey's World of Microcontrollers &amp; Microprocessors</title>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<script src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/ca-pub-0371245781681096.js"></script><script type="text/javascript" async="" src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/ga.js"></script><script async="" src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/cloudflare.min.js"></script><script type="text/javascript">
+//<![CDATA[
+try{if (!window.CloudFlare) {var CloudFlare=[{verbose:0,p:0,byc:0,owlid:"cf",bag2:1,mirage2:0,oracle:0,paths:{cloudflare:"/cdn-cgi/nexp/dok3v=1613a3a185/"},atok:"1703d32c2eab715ff91d7f11f4a92d5a",petok:"cbd3dbaa43d0019bf922da3c39c5084025a954c8-1470819269-1800",zone:"8051projects.net",rocket:"0",apps:{"ga_key":{"ua":"UA-2161571-2","ga_bs":"2"}},sha2test:0}];!function(a,b){a=document.createElement("script"),b=document.getElementsByTagName("script")[0],a.async=!0,a.src="//ajax.cloudflare.com/cdn-cgi/nexp/dok3v=0489c402f5/cloudflare.min.js",b.parentNode.insertBefore(a,b)}()}}catch(e){};
+//]]>
+</script>
+<link rel="alternate" type="application/rss+xml" title="Rickey&#39;s World of Microcontrollers &amp;amp; Microprocessors Comments" href="http://www.8051projects.net/plugins/rss_menu/rss.php?comments.2">
+<link rel="alternate" type="application/rss+xml" title="Rickey&#39;s World of Microcontrollers &amp;amp; Microprocessors Downloads" href="http://www.8051projects.net/plugins/rss_menu/rss.php?download.2">
+<link rel="alternate" type="application/rss+xml" title="Rickey&#39;s World of Microcontrollers &amp;amp; Microprocessors Forum / posts" href="http://www.8051projects.net/plugins/rss_menu/rss.php?forumposts.2">
+<link rel="alternate" type="application/rss+xml" title="Rickey&#39;s World of Microcontrollers &amp;amp; Microprocessors Forum / threads" href="http://www.8051projects.net/plugins/rss_menu/rss.php?forumthreads.2">
+<link rel="alternate" type="application/rss+xml" title="Rickey&#39;s World of Microcontrollers &amp;amp; Microprocessors News" href="http://www.8051projects.net/plugins/rss_menu/rss.php?news.2">
+ 
+ 
+<link rel="pingback" href="http://www.8051projects.net/plugins/trackback/trackback.php"> 
+ 
+<meta name="description" content="learn to interface 4x4 matrix keypad with AVR and 8051 microcontroller and program AVR microcontroller and 8051 microcontroller in C and assembly for keypad matrix.">
+<meta name="keywords" content="keypad interfacing, martix keypad, 4x4 keypad matrix, keypad interfacing AVR, keypad interfacing 8051, keypad program C, keypad program assembly">
+<meta name="author" content="Ajay Bhargav">
+ 
+<link rel="icon" href="http://www.8051projects.net/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="http://www.8051projects.net/favicon.ico" type="image/xicon">
+ 
+ 
+ 
+<link href="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/g=rwtheme.css" rel="stylesheet">
+<!--[if lte IE 9]>
+			<link rel="stylesheet" href="/themes/rwnewtheme/css/ace-part2.min.css" />
+		<![endif]-->
+<!--[if lte IE 9]>
+		  <link rel="stylesheet" href="/themes/rwnewtheme/css/ace-ie.min.css" />
+		<![endif]-->
+ 
+ 
+ 
+ 
+ 
+<!--[if lte IE 8]>
+		<script data-cfasync='true' src="/themes/rwnewtheme/js/html5shiv.min.js"></script>
+		<script data-cfasync='true' src="/themes/rwnewtheme/js/respond.min.js"></script>
+		<![endif]-->
+<style>.video-container{position:relative;padding-bottom:56.25%;padding-top:30px;height:0;overflow:hidden}.video-container iframe,.video-container object,.video-container embed{position:absolute;top:0;left:0;width:100%;height:100%}</style>
+ 
+<script type="text/javascript">
+/* <![CDATA[ */
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2161571-2']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+(function(b){(function(a){"__CF"in b&&"DJS"in b.__CF?b.__CF.DJS.push(a):"addEventListener"in b?b.addEventListener("load",a,!1):b.attachEvent("onload",a)})(function(){"FB"in b&&"Event"in FB&&"subscribe"in FB.Event&&(FB.Event.subscribe("edge.create",function(a){_gaq.push(["_trackSocial","facebook","like",a])}),FB.Event.subscribe("edge.remove",function(a){_gaq.push(["_trackSocial","facebook","unlike",a])}),FB.Event.subscribe("message.send",function(a){_gaq.push(["_trackSocial","facebook","send",a])}));"twttr"in b&&"events"in twttr&&"bind"in twttr.events&&twttr.events.bind("tweet",function(a){if(a){var b;if(a.target&&a.target.nodeName=="IFRAME")a:{if(a=a.target.src){a=a.split("#")[0].match(/[^?=&]+=([^&]*)?/g);b=0;for(var c;c=a[b];++b)if(c.indexOf("url")===0){b=unescape(c.split("=")[1]);break a}}b=void 0}_gaq.push(["_trackSocial","twitter","tweet",b])}})})})(window);
+/* ]]> */
+</script><style type="text/css">.cf-hidden { display: none; } .cf-invisible { visibility: hidden; }</style>
+<link rel="stylesheet" type="text/css" href="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/font-awesome.css"><link rel="stylesheet" type="text/css" href="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/css"></head>
+<body onload="externalLinks();" class="no-skin">
+  <div id="navbar" class="navbar navbar-default navbar-collapse h-navbar navbar-fixed-top"> <div class="navbar-container" id="navbar-container"> <div class="navbar-header pull-left">   <a href="http://www.8051projects.net/" class="navbar-brand"> <small> <i class="fa fa-institution"></i> Rickey's World </small> </a>    
+<button class="pull-right navbar-toggle collapsed white" type="button" data-toggle="collapse" data-target=".navbar-menu">
+<span class="sr-only">Toggle sidebar</span>
+Login
+</button>
+<button class="pull-right navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".sidebar"> <span class="sr-only">Toggle sidebar</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>   </div>   <div class="navbar-buttons navbar-header pull-right  collapse navbar-collapse" role="navigation"> <ul class="nav ace-nav">
+<li class="light-blue user-login">
+<a data-toggle="dropdown" href="https://www.8051projects.net/login.php" class="user-login dropdown-toggle">
+<i class="ace-icon fa fa-key"></i> Login
+<i class="ace-icon fa fa-caret-down"></i>
+</a>
+<div id="user_login" class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close login-dropbox">
+<div class="login-container">
+<div class="position-relative">
+<div id="login-box" class="login-box widget-box no-border visible no-margin">
+<div class="widget-body">
+<div class="widget-main no-padding-top">
+<h4 class="blue header lighter">
+<i class="ace-icon fa fa-coffee green"></i>
+Please Enter Your Information
+</h4>
+<div class="space-6"></div>
+<form method="post" action="http://www.8051projects.net/keypad-interfacing/introduction.php">
+<fieldset>
+<label class="block clearfix">
+<span class="block input-icon input-icon-right">
+<input type="text" placeholder="Username" class="form-control" name="username" id="username" maxlength="30">
+<i class="ace-icon fa fa-user"></i>
+</span>
+</label>
+<label class="block clearfix">
+<span class="block input-icon input-icon-right">
+<input type="password" placeholder="Password" class="form-control" name="userpass" id="userpass">
+<i class="ace-icon fa fa-lock"></i>
+</span>
+</label>
+<div class="space"></div>
+<div class="clearfix">
+<label class="inline">
+<input class="ace ace-switch ace-switch-2" type="checkbox" name="autologin">
+<span class="lbl">&nbsp;&nbsp;Remember Me</span>
+</label>
+<button class="width-35 pull-right btn btn-sm btn-primary" type="submit" name="userlogin">
+<i class="ace-icon fa fa-key"></i>
+<span class="bigger-110">Login</span>
+</button>
+</div>
+</fieldset>
+</form>
+</div> 
+<div class="toolbar clearfix">
+<div>
+<a href="http://www.8051projects.net/fpw.php" data-target="#forgot-box" class="forgot-password-link">
+<i class="ace-icon fa fa-arrow-left"></i>
+I forgot my password
+</a>
+</div>
+<div>
+<a class="user-signup-link" href="http://www.8051projects.net/signup.php">
+I want to register
+<i class="ace-icon fa fa-arrow-right"></i>
+</a>
+</div>
+</div>
+</div> 
+</div>
+<div id="forgot-box" class="forgot-box widget-box no-border">
+<div class="widget-body">
+<div class="widget-main no-padding-top">
+<h4 class="header red lighter bigger no-margin-bottom">
+<i class="ace-icon fa fa-key"></i>
+Retrieve Password
+</h4>
+<p>Enter your email and to receive instructions</p>
+<form method="post" action="http://www.8051projects.net/fpw.php">
+<fieldset>
+<label class="block clearfix">
+<span class="block input-icon input-icon-right">
+<input type="text" class="form-control" placeholder="Username">
+<i class="ace-icon fa fa-user"></i>
+</span>
+</label>
+<label class="block clearfix">
+<span class="block input-icon input-icon-right">
+<input type="email" class="form-control" placeholder="Email">
+<i class="ace-icon fa fa-envelope"></i>
+</span>
+</label>
+<label class="block clearfix">
+<span class="lbl bigger-110">Verification Image:</span> <script data-pagespeed-no-defer="">(function(){var g=this;function h(b,d){var a=b.split("."),c=g;a[0]in c||!c.execScript||c.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===d?c[e]?c=c[e]:c=c[e]={}:c[e]=d};function l(b){var d=b.length;if(0<d){for(var a=Array(d),c=0;c<d;c++)a[c]=b[c];return a}return[]};function m(b){var d=window;if(d.addEventListener)d.addEventListener("load",b,!1);else if(d.attachEvent)d.attachEvent("onload",b);else{var a=d.onload;d.onload=function(){b.call(this);a&&a.call(this)}}};var n;function p(b,d,a,c,e){this.h=b;this.j=d;this.l=a;this.f=e;this.g={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.i=c;this.b={};this.a=[];this.c={}}function q(b,d){var a,c,e=d.getAttribute("data-pagespeed-url-hash");if(a=e&&!(e in b.c))if(0>=d.offsetWidth&&0>=d.offsetHeight)a=!1;else{c=d.getBoundingClientRect();var f=document.body;a=c.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);c=c.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+c;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.g.height&&c<=b.g.width)}a&&(b.a.push(e),b.c[e]=!0)}p.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&q(this,b)};h("pagespeed.CriticalImages.checkImageForCriticality",function(b){n.checkImageForCriticality(b)});h("pagespeed.CriticalImages.checkCriticalImages",function(){r(n)});function r(b){b.b={};for(var d=["IMG","INPUT"],a=[],c=0;c<d.length;++c)a=a.concat(l(document.getElementsByTagName(d[c])));if(0!=a.length&&a[0].getBoundingClientRect){for(c=0;d=a[c];++c)q(b,d);a="oh="+b.l;b.f&&(a+="&n="+b.f);if(d=0!=b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),c=1;c<b.a.length;++c){var e=","+encodeURIComponent(b.a[c]);131072>=a.length+e.length&&(a+=e)}b.i&&(e="&rd="+encodeURIComponent(JSON.stringify(t())),131072>=a.length+e.length&&(a+=e),d=!0);u=a;if(d){c=b.h;b=b.j;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(k){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(v){}}f&&(f.open("POST",c+(-1==c.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}}function t(){var b={},d=document.getElementsByTagName("IMG");if(0==d.length)return{};var a=d[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var c=0;a=d[c];++c){var e=a.getAttribute("data-pagespeed-url-hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].o&&a.height>=b[e].m)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b}var u="";h("pagespeed.CriticalImages.getBeaconData",function(){return u});h("pagespeed.CriticalImages.Run",function(b,d,a,c,e,f){var k=new p(b,d,a,e,f);n=k;c&&m(function(){window.setTimeout(function(){r(k)},0)})});})();pagespeed.CriticalImages.Run('/ngx_pagespeed_beacon','https://www.8051projects.net/keypad-interfacing/introduction.php','aAz0o6G8a6',true,false,'7cEnwgn_jz0');</script><img src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/secure_img_render.php" alt="" data-pagespeed-url-hash="1006021389" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+<input type="text" id="email2" name="email2" value="" style="display:none">
+</label>
+<label class="block clearfix">
+<span class="block input-icon input-icon-right">
+<input name="code_verify" type="text" class="form-control" placeholder="Image Verify">
+<i class="ace-icon fa fa-key"></i>
+</span>
+</label>
+<input type="hidden" name="rand_num" value="1470819268033171100">
+<div class="clearfix">
+<input type="hidden" name="e-token" value="2b3295d47bdf6558a791b13f2f83389f57aaebc44e6c74.10408838">
+<button name="pwsubmit" type="submit" class="width-35 pull-right btn btn-sm btn-danger">
+<i class="ace-icon fa fa-lightbulb-o"></i>
+<span class="bigger-110">Send Me!</span>
+</button>
+</div>
+</fieldset>
+</form>
+</div> 
+<div class="toolbar center">
+<a class="back-to-login-link" data-target="#login-box" href="https://www.8051projects.net/login.php">
+Back to login
+<i class="ace-icon fa fa-arrow-right"></i>
+</a>
+</div>
+</div> 
+</div>
+</div>
+</div>
+</div>
+</li>
+</ul> </div>   <nav role="navigation" class="navbar-menu pull-left collapse navbar-collapse">   <ul id="navbar-small" class="nav navbar-nav hidden-sm hidden-xs" style="display: block;">
+ 
+<li>
+<a data-toggle="dropdown" class="dropdown-toggle" href="https://www.8051projects.net/plugins/forum/forum.php">
+<i class="ace-icon fa fa-group"></i> Community
+&nbsp;
+<i class="ace-icon fa fa-angle-down bigger-110"></i>
+</a>
+<ul class="dropdown-menu dropdown-light-blue dropdown-caret">
+<li>
+<a href="http://www.8051projects.net/forum.html">
+Discussion Forum
+</a>
+</li>
+<li>
+<a data-toggle="modal" href="https://www.8051projects.net/plugins/#post-question">
+Post a Question
+</a>
+</li>
+<li>
+<a href="https://www.8051projects.net/plugins/forum/forum.php?new">
+New Forum Posts
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="http://www.8051projects.net/wiki/">
+<i class="ace-icon fa fa-book"></i> Tutorials
+</a>
+</li>
+ 
+<li>
+<a data-toggle="dropdown" class="dropdown-toggle" href="http://www.8051projects.net/download.html">
+<i class="ace-icon fa fa-cloud-download"></i> Downloads
+&nbsp;
+<i class="ace-icon fa fa-angle-down bigger-110"></i>
+</a>
+<ul class="dropdown-menu dropdown-light-blue dropdown-caret">
+<li>
+<a href="http://www.8051projects.net/download-c1-project-downloads.html">
+Project Downloads
+</a>
+</li>
+<li>
+<a href="http://www.8051projects.net/download-c2-libraries.html">
+Libraries
+</a>
+</li>
+<li>
+<a href="http://www.8051projects.net/download-c3-codes.html">
+Sample Codes
+</a>
+</li>
+<li>
+<a href="http://www.8051projects.net/download-c15-ebooks-tutorials.html">
+Ebooks &amp; Tutorials
+</a>
+</li>
+<li>
+<a href="http://www.8051projects.net/download-c11-softwares-microcontrollers.html">
+Free Softwares
+</a>
+</li>
+<li>
+<a href="http://www.8051projects.net/download.html">
+All Downloads
+</a>
+</li>
+</ul>
+</li>
+<li>
+<a data-toggle="dropdown" class="dropdown-toggle" href="https://www.8051projects.net/keypad-interfacing/introduction.php#">
+<i class="ace-icon fa fa-code-fork"></i> More
+&nbsp;
+<i class="ace-icon fa fa-angle-down bigger-110"></i>
+</a>
+<ul class="dropdown-menu dropdown-light-blue dropdown-caret">
+<li>
+<a href="http://www.8051projects.net/lcdpinouts.html">
+LCD Pinouts
+</a>
+</li>
+<li>
+<a href="http://www.8051projects.net/jetengine/">
+Jet Engine
+</a>
+</li>
+<li>
+<a href="http://www.8051projects.net/arcade.html">
+Games
+</a>
+</li>
+<li>
+<a href="http://www.8051projects.net/aboutme.html">
+About Me
+</a>
+</li>
+<li>
+<a href="http://www.8051projects.net/user.html">
+Members
+</a>
+</li>
+<li>
+<a href="http://www.8051projects.net/links.html">
+Links
+</a>
+</li>
+<li>
+<a href="http://www.8051projects.net/rss-8051microcontroller.html">
+RSS Feeds
+</a>
+</li>
+<li>
+<a href="http://www.8051projects.net/guestbook.html">
+Guestbook
+</a>
+</li>
+<li>
+<a href="http://www.8051projects.net/sitemap.html">
+Sitemap
+</a>
+</li>
+</ul>
+</li>
+</ul> <ul class="nav navbar-nav hidden-md hidden-lg"> <li> <a href="http://www.8051projects.net/signup.php"> <i class="ace-icon fa fa-laptop"></i> Register </a> </li> <li> <a href="http://www.8051projects.net/login.php"> <i class="ace-icon fa fa-key"></i> Login </a> </li> </ul>     <form class="navbar-form navbar-left form-search" role="search" action="https://www.8051projects.net/search.php"> <div class="form-group"> <input type="text" name="search" placeholder="search"> </div> <button type="button" class="btn btn-xs btn-info2"> <i class="ace-icon fa fa-search icon-only bigger-110"></i> </button> </form>   </nav> </div> </div> <div class="main-container" id="main-container">
+ 
+<div id="sidebar" class="sidebar h-sidebar navbar-collapse collapse">
+ 
+<div style="position: relative;"><div class="nav-wrap"><div style="position: relative; top: 0px; transition-property: top; transition-duration: 0.2s;"><div class="sidebar-shortcuts" id="sidebar-shortcuts">
+<div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+<a href="https://www.facebook.com/sharer.php?u=//www.8051projects.net&amp;t=Rickey%27s+World+of+Microcontrollers" target="_blank" class="btn btn-success tooltip-success" title="" data-placement="right" data-rel="tooltip" data-original-title="Share on Facebook">
+<i class="ace-icon fa fa-facebook"></i>
+</a>
+<a class="btn btn-info tooltip-info" title="" data-placement="right" data-rel="tooltip" href="https://twitter.com/intent/tweet?text=Rickey%27s+World+of+Microcontrollers&amp;url=//www.8051projects.net" target="_blank" data-original-title="Share on Twitter">
+<i class="ace-icon fa fa-twitter"></i>
+</a>
+ 
+<a hrf="//www.linkedin.com/shareArticle?url=//www.8051projects.net&amp;title=Rickey%27s+World+of+Microcontrollers" target="_blank" class="btn btn-warning tooltip-warning" title="" data-placement="right" data-rel="tooltip" data-original-title="Share on LinkedIn">
+<i class="ace-icon fa fa-linkedin"></i>
+</a>
+<a href="https://plus.google.com/share?url=//www.8051projects.net" target="_blank" class="btn btn-danger tooltip-error" title="" data-placement="right" data-rel="tooltip" data-original-title="Share on Google+">
+<i class="ace-icon fa fa-google-plus"></i>
+</a>
+ 
+</div>
+<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+<span class="btn btn-success"></span>
+<span class="btn btn-info"></span>
+<span class="btn btn-warning"></span>
+<span class="btn btn-danger"></span>
+</div>
+</div><ul class="nav nav-list">
+<li itemscope="" itemtype="//schema.org/SiteNavigationElement" class="hover ">
+<a itemprop="url" href="http://www.8051projects.net/">
+<i class="menu-icon fa fa-home"></i>
+<span itemprop="name" class="menu-text"> Home </span>
+<meta itemprop="description" content="Rickeys world of microcontrollers homepage">
+</a>
+<b class="arrow"></b>
+</li>
+<li itemscope="" itemtype="//schema.org/SiteNavigationElement" class="hover  hsub">
+<a itemprop="url" href="https://www.8051projects.net/plugins/forum/forum.php" class="dropdown-toggle">
+<i class="menu-icon fa fa-group"></i>
+<span itemprop="name" class="menu-text"> Community </span>
+<b class="arrow fa fa-angle-down"></b>
+<meta itemprop="description" content="post your doubts regarding microcontroller and embedded systems in our discusion forum">
+</a>
+<b class="arrow"></b>
+<ul class="submenu">
+<li class="hover highlight" itemscope="" itemtype="//schema.org/SiteNavigationElement">
+<a itemprop="url" href="http://www.8051projects.net/forum.html">
+<i class="menu-icon fa fa-double-angle-right"></i>
+<span itemprop="name">Discussion Forum</span>
+<meta itemprop="description" content="post your doubts regarding microcontroller and embedded systems in our discusion forum">
+</a>
+<b class="arrow"></b>
+</li>
+<li class="hover highlight" itemscope="" itemtype="//schema.org/SiteNavigationElement">
+<a data-toggle="modal" itemprop="url" href="https://www.8051projects.net/keypad-interfacing/introduction.php#post-question">
+<i class="menu-icon fa fa-double-angle-right"></i>
+<span itemprop="name">Post a question</span>
+<meta itemprop="description" content="Post a query or doubt on forum">
+</a>
+<b class="arrow"></b>
+</li>
+<li class="hover highlight" itemscope="" itemtype="//schema.org/SiteNavigationElement">
+<a itemprop="url" href="https://www.8051projects.net/plugins/forum/forum.php?new">
+<i class="menu-icon fa fa-double-angle-right"></i>
+<span itemprop="name">New Forum Posts</span>
+<meta itemprop="description" content="New unread posts on forum">
+</a>
+<b class="arrow"></b>
+</li>
+</ul>
+</li>
+<li class="hover highlight" itemscope="" itemtype="//schema.org/SiteNavigationElement">
+<a itemprop="url" href="http://www.8051projects.net/wiki/">
+<i class="menu-icon fa fa-book"></i>
+<span itemprop="name" class="menu-text"> Tutorials </span>
+<meta itemprop="description" content="Get information on mobile phone LCD pinouts">
+</a>
+<b class="arrow"></b>
+</li>
+ 
+<li itemscope="" itemtype="//schema.org/SiteNavigationElement" class="hover  hsub">
+<a itemprop="url" href="http://www.8051projects.net/download.html" class="dropdown-toggle">
+<i class="menu-icon fa fa-cloud-download"></i>
+<span itemprop="name" class="menu-text"> Downloads </span>
+<b class="arrow fa fa-angle-down"></b>
+<meta itemprop="description" content="Download latest microcontroller projects related to 8051, pic, avr, arm microcontroller">
+</a>
+<b class="arrow"></b>
+<ul class="submenu">
+<li class="hover highlight" itemscope="" itemtype="//schema.org/SiteNavigationElement">
+<a itemprop="url" href="http://www.8051projects.net/download-c1-project-downloads.html">
+<i class="menu-icon fa fa-double-angle-right"></i>
+<span itemprop="name">Project Downloads</span>
+<meta itemprop="description" content="Download free projects on 8051, PIC, AVR and ARM microcontroller. Download proteus projects and schematics">
+</a>
+<b class="arrow"></b>
+</li>
+<li class="hover highlight" itemscope="" itemtype="//schema.org/SiteNavigationElement">
+<a itemprop="url" href="http://www.8051projects.net/download-c2-libraries.html">
+<i class="menu-icon fa fa-double-angle-right"></i>
+<span itemprop="name">Libraries</span>
+<meta itemprop="description" content="Download libraries for various peripherals">
+</a>
+<b class="arrow"></b>
+</li>
+<li class="hover highlight" itemscope="" itemtype="//schema.org/SiteNavigationElement">
+<a itemprop="url" href="http://www.8051projects.net/download-c3-codes.html">
+<i class="menu-icon fa fa-double-angle-right"></i>
+<span itemprop="name">Sample Codes</span>
+<meta itemprop="description" content="Download sample codes">
+</a>
+<b class="arrow"></b>
+</li>
+<li class="hover highlight" itemscope="" itemtype="//schema.org/SiteNavigationElement">
+<a itemprop="url" href="http://www.8051projects.net/download-c15-ebooks-tutorials.html">
+<i class="menu-icon fa fa-double-angle-right"></i>
+<span itemprop="name">Ebooks &amp; Tutorials</span>
+<meta itemprop="description" content="Download ebooks and tutorial for 8051, PIC and AVR uCs here">
+</a>
+<b class="arrow"></b>
+</li>
+<li class="hover highlight" itemscope="" itemtype="//schema.org/SiteNavigationElement">
+<a itemprop="url" href="http://www.8051projects.net/download-c11-softwares-microcontrollers.html">
+<i class="menu-icon fa fa-double-angle-right"></i>
+<span itemprop="name">Free Softwares</span>
+<meta itemprop="description" content="Free software download for microcontrollers">
+</a>
+<b class="arrow"></b>
+</li>
+<li class="hover highlight" itemscope="" itemtype="//schema.org/SiteNavigationElement">
+<a itemprop="url" href="http://www.8051projects.net/download.html">
+<i class="menu-icon fa fa-double-angle-right"></i>
+<span itemprop="name">All Download</span>
+<meta itemprop="description" content="Download latest microcontroller projects related to 8051, pic, avr, arm microcontroller">
+</a>
+<b class="arrow"></b>
+</li>
+</ul>
+</li>
+<li class="hover highlight" itemscope="" itemtype="//schema.org/SiteNavigationElement">
+<a itemprop="url" href="http://www.8051projects.net/lcdpinouts.html">
+<i class="menu-icon fa fa-desktop"></i>
+<span itemprop="name" class="menu-text"> LCD Pinouts </span>
+<meta itemprop="description" content="Get information on mobile phone LCD pinouts">
+</a>
+<b class="arrow"></b>
+</li>
+<li class="hover highlight" itemscope="" itemtype="//schema.org/SiteNavigationElement">
+<a itemprop="url" href="http://www.8051projects.net/jetengine/">
+<i class="menu-icon fa fa-fighter-jet"></i>
+<span itemprop="name" class="menu-text"> Jet Engine </span>
+<meta itemprop="description" content="GR1 based home made jet engine project">
+</a>
+<b class="arrow"></b>
+</li>
+<li class="hover highlight" itemscope="" itemtype="//schema.org/SiteNavigationElement">
+<a itemprop="url" href="http://www.8051projects.net/arcade.html">
+<i class="menu-icon fa fa-gamepad"></i>
+<span itemprop="name" class="menu-text"> Games </span>
+<meta itemprop="description" content="Kill time with playing games on rickeys world arcade">
+</a>
+<b class="arrow"></b>
+</li>
+<li itemscope="" itemtype="//schema.org/SiteNavigationElement" class="hover  hsub">
+<a href="https://www.8051projects.net/keypad-interfacing/introduction.php#" class="dropdown-toggle">
+<i class="menu-icon fa fa-code-fork"></i>
+<span class="menu-text"> More </span>
+<b class="arrow fa fa-angle-down"></b>
+</a>
+<b class="arrow"></b>
+<ul class="submenu">
+<li class="hover highlight" itemscope="" itemtype="//schema.org/SiteNavigationElement">
+<a itemprop="url" href="http://www.8051projects.net/aboutme.html">
+<i class="menu-icon fa fa-double-angle-right"></i>
+<span itemprop="name">About Me</span>
+</a>
+<b class="arrow"></b>
+</li>
+<li itemscope="" itemtype="//schema.org/SiteNavigationElement" class="hover ">
+<a itemprop="url" href="http://www.8051projects.net/user.html">
+<i class="menu-icon fa fa-double-angle-right"></i>
+<span itemprop="name">Members</span>
+</a>
+<b class="arrow"></b>
+</li>
+<li class="hover highlight" itemscope="" itemtype="//schema.org/SiteNavigationElement">
+<a itemprop="url" href="http://www.8051projects.net/links.html">
+<i class="menu-icon fa fa-double-angle-right"></i>
+<span itemprop="name">Links</span>
+</a>
+<b class="arrow"></b>
+</li>
+<li class="hover highlight" itemscope="" itemtype="//schema.org/SiteNavigationElement">
+<a itemprop="url" href="http://www.8051projects.net/rss-8051microcontroller.html">
+<i class="menu-icon fa fa-double-angle-right"></i>
+<span itemprop="name">RSS Feeds</span>
+</a>
+<b class="arrow"></b>
+</li>
+<li class="hover highlight" itemscope="" itemtype="//schema.org/SiteNavigationElement">
+<a itemprop="url" href="http://www.8051projects.net/guestbook.html">
+<i class="menu-icon fa fa-double-angle-right"></i>
+<span itemprop="name">Guestbook</span>
+</a>
+<b class="arrow"></b>
+</li>
+<li class="hover highlight" itemscope="" itemtype="//schema.org/SiteNavigationElement">
+<a itemprop="url" href="http://www.8051projects.net/sitemap.html">
+<i class="menu-icon fa fa-double-angle-right"></i>
+<span itemprop="name">Sitemap</span>
+</a>
+<b class="arrow"></b>
+</li>
+</ul>
+</li>
+</ul></div></div><div class="ace-scroll nav-scroll"><div class="scroll-track" style="display: none;"><div class="scroll-bar" style="top: 0px; transition-property: top; transition-duration: 0.13s;"></div></div><div class="scroll-content" style=""><div></div></div></div></div> 
+</div>
+  <div class="main-content"> <div id="breadcrumbs" class="breadcrumbs no-margin"> <ul class="breadcrumb"> <li itemscope="" itemtype="//data-vocabulary.org/Breadcrumb"> <i class="ace-icon fa fa-home home-icon"></i> <a itemprop="url" href="http://www.8051projects.net/"><span itemprop="title">Home</span></a> </li> </ul>  </div> <div class="page-content"> <div class="page-header"> <h1> </h1> </div>  <div class="row"> <div class="col-xs-12 col-md-8">   <div class="row center"> <div class="col-xs-12">   <ins class="adsbygoogle col-xs-12" style="display: block; height: 90px;" data-ad-client="ca-pub-0371245781681096" data-ad-slot="5346533765" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:731px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:731px;background-color:transparent"><iframe width="731" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/saved_resource.html"></iframe></ins></ins></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> </div> <div class="space-8"></div><br><font face="Arial" color="#397a44" size="4">►Introduction</font><br><br>Keypads are a part of HMI or Human Machine Interface and play really important role in a small embedded system where human interaction or human input is needed. Martix keypads are well known for their simple architecture and ease of interfacing with any microcontroller. In this part of tutorial we will learn how to interface a 4x4 matrix keypad with AVR and 8051 microcontroller. Also we will see how to program then in Assembly and C.<br><br><br><font face="Arial" color="#397a44" size="4">►Constructing a Matrix Keypad</font><br><br>Constuction of a keypad is really simple. As per the outline shown in the figure below we have four rows and four columns. In between each overlapping row and column line there is a key.<br><br><center><div class="tbox" style="width:150px; height:150px"><br><img src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/keypad.gif" width="130" height="126" alt="4x4 matrix Keypad outline" data-pagespeed-url-hash="3523252416" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></div></center><br>So keeping this outline we can constuct a keypad using simple SPST Switches as shown below:<br><br><br><center><div class="tbox" style="width:461px; height:301px"><img src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/keypad-schematic.gif" width="461" height="301" alt="4x4 matrix Keypad schematic" data-pagespeed-url-hash="3052975708" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></div></center><br>Now our keypad is ready, all we have to do is connect the rows and columns to a port of microcontroller and program the controller to read the input.<br><br><br><font face="Arial" color="#397a44" size="4">►Scanning a Matrix Keypad</font><br><br>There are many methods depending on how you connect your keypad with your controller, but the basic logic is same. We make the coloums as i/p and we drive the rows making them o/p, this whole procedure of reading the keyboard is called scanning.<br><br><br>In order to detect which key is pressed from the matrix, we make row lines low one by one and read the coloums. Lets say we first make Row1 low, then read the columns. If any of the key in row1 is pressed will make the corrosponding column as low i.e if second key is pressed in Row1, then column2 will give low. So we come to know that key 2 of Row1 is pressed. This is how scanning is done.<br><br><br>So to scan the keypad completely, we need to make rows low one by one and read the columns. If any of the button is pressed in a row, it will take the corrosponding column to a low state which tells us that a key is pressed in that row. If button 1 of a row is pressed then Column 1 will become low, if button 2 then column2 and so on...<br><br><br>Now lets move on to the programming part of keypad in our next section.<br><br><center><span style="color: #999999; font-size: x-small"><a href="https://www.8051projects.net/keypad-interfacing/index.php">◄ Back to Index</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="https://www.8051projects.net/keypad-interfacing/connection-diagram.php">Connecting a Keypad ►</a></span>   </center></div>  <div class="col-xs-12 col-md-4"> <div class="row"> <div class="center col-xs-6"> <a href="https://www.8051projects.net/keypad-interfacing/introduction.php#post-question" data-toggle="modal"> <div class="alert alert-info center"> <div class="infobox-icon infobox-icon-blue width-100 block"> <i class="ace-icon fa fa-question"></i> </div> Post A Question </div> </a> </div> <div class="center col-xs-6"> <a href="https://www.8051projects.net/keypad-interfacing/introduction.php#post-project" data-toggle="modal"> <div class="alert alert-success center"> <div class="infobox-icon infobox-icon-green width-100 block"> <i class="ace-icon fa fa-flask"></i> </div> Share A Project </div> </a> </div> </div> <div class="row"> <div class="col-xs-12">   <ins class="adsbygoogle col-xs-12" style="display: block; height: 90px;" data-ad-client="ca-pub-0371245781681096" data-ad-slot="9870804964" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:731px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:731px;background-color:transparent"><iframe width="731" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/saved_resource(1).html"></iframe></ins></ins></ins> <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script> </div> </div> <div class="space-8"></div> <div class="row"> <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12">
+<div class="widget-box">
+<div class="widget-header widget-header-small">
+<h4 class="widget-title lighter smaller"><i class="ace-icon fa fa-comment"></i> Conversation</h4>
+<div class="widget-toolbar">
+</div>
+</div>
+<div class="widget-body">
+<div class="widget-body-inner">
+<div class="widget-main no-padding">
+<form id="chatbox" action="http://www.8051projects.net/keypad-interfacing/introduction.php" method="post">
+<input type="hidden" name="chatbox_ajax" id="chatbox_ajax" value="1">
+<input type="hidden" name="ajax_used" id="ajax_used" value="1">
+<div class="form-actions row">
+<div class="input-icon col-xs-6 no-padding-left">
+<i class="ace-icon fa fa-user"></i>
+<input class="col-xs-12" type="text" id="nick" name="nick" value="" maxlength="50" placeholder="Name">
+</div>
+<div class="input-icon col-xs-6 no-padding">
+<i class="ace-icon fa fa-envelope"></i>
+<input class="col-xs-12" type="email" id="cb_email" name="cb_email" value="" maxlength="100" placeholder="Email" title="" data-rel="tooltip" data-placement="bottom" data-original-title="Email will not be published">
+</div>
+<div class="col-xs-12"></div>
+<div class="input-icon col-xs-12 no-padding">
+<i class="ace-icon fa fa-comment"></i>
+<input class="col-xs-12" placeholder="Type your message here ..." type="text" name="cmessage" id="cmessage" onselect="storeCaret(this);" onclick="storeCaret(this);" onkeyup="storeCaret(this);">
+</div>
+<div class="col-xs-12 space no-margin-bottom"></div>
+ 
+<div class="btn-group">
+<button class="btn btn-sm btn-info no-radius" id="chat_submit" name="chat_submit" value="1" type="submit">
+<i class="ace-icon fa fa-reply"></i>
+</button>
+<button class="btn btn-sm btn-info no-radius" id="chat_refresh" name="chat_refresh" value="2" type="submit">
+<i class="ace-icon fa fa-refresh"></i>
+</button>
+</div>
+<div class="btn-group dropdown-colorpicker">
+<button class="btn btn-sm btn-info no-radius dropdown-toggle" data-toggle="dropdown">
+<i class="ace-icon fa fa-smile-o"></i>
+<i class="ace-icon fa fa-angle-down icon-on-right"></i>
+</button>
+<ul class="dropdown-menu dropdown-caret action-buttons dropdown-light"><li><a class="colorpick-btn" href="javascript:addtext(&#39;  ;) &#39;,true)"><img data-src="../images/emotes/FBemote/wink.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39;  :o &#39;,true)"><img data-src="../images/emotes/FBemote/oww.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39;  B-) &#39;,true)"><img data-src="../images/emotes/FBemote/cool.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39;  :angel &#39;,true)"><img data-src="../images/emotes/FBemote/angel.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39;  ;( &#39;,true)"><img data-src="../images/emotes/FBemote/cry.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39; !ow &#39;,true)"><img data-src="../images/emotes/FBemote/oo.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39;  :D &#39;,true)"><img data-src="../images/emotes/FBemote/laugh.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39;  :( &#39;,true)"><img data-src="../images/emotes/FBemote/sad.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39;  :grin: &#39;,true)"><img data-src="../images/emotes/FBemote/devil.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39;  :* &#39;,true)"><img data-src="../images/emotes/FBemote/kiss.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39;  :heart &#39;,true)"><img data-src="../images/emotes/FBemote/heart.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39;  !sm &#39;,true)"><img data-src="../images/emotes/FBemote/smile1.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39;  :uh &#39;,true)"><img data-src="../images/emotes/FBemote/uhh.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39;  !pac &#39;,true)"><img data-src="../images/emotes/FBemote/pacman.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39;  :) &#39;,true)"><img data-src="../images/emotes/FBemote/smile.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39; :P &#39;,true)"><img data-src="../images/emotes/FBemote/tongue.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39;  :nerd &#39;,true)"><img data-src="../images/emotes/FBemote/glass.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39;  :lol &#39;,true)"><img data-src="../images/emotes/FBemote/laugh1.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39;  :sm &#39;,true)"><img data-src="../images/emotes/FBemote/smile2.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39;  :nose &#39;,true)"><img data-src="../images/emotes/FBemote/nose.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li><li><a class="colorpick-btn" href="javascript:addtext(&#39;  :-/ &#39;,true)"><img data-src="../images/emotes/FBemote/confuse.png" style="border:0; padding-top:2px;" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"></a></li></ul>
+</div>
+</div>
+</form><div id="chatboxwrapper" tabindex="0" style="height: 319px; overflow: hidden; position: relative; outline: none;"><div id="chatbox-posts" style="transform: translate3d(0px, 0px, 0px);"> <div class="dialogs">
+<div class="itemdiv dialogdiv">
+<div class="user">
+<script data-pagespeed-no-defer="" type="text/javascript">(function(){var g=this;function h(b,d){var a=b.split("."),c=g;a[0]in c||!c.execScript||c.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===d?c[e]?c=c[e]:c=c[e]={}:c[e]=d};function l(b){var d=b.length;if(0<d){for(var a=Array(d),c=0;c<d;c++)a[c]=b[c];return a}return[]};function m(b){var d=window;if(d.addEventListener)d.addEventListener("load",b,!1);else if(d.attachEvent)d.attachEvent("onload",b);else{var a=d.onload;d.onload=function(){b.call(this);a&&a.call(this)}}};var n;function p(b,d,a,c,e){this.h=b;this.j=d;this.l=a;this.f=e;this.g={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.i=c;this.b={};this.a=[];this.c={}}function q(b,d){var a,c,e=d.getAttribute("data-pagespeed-url-hash");if(a=e&&!(e in b.c))if(0>=d.offsetWidth&&0>=d.offsetHeight)a=!1;else{c=d.getBoundingClientRect();var f=document.body;a=c.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);c=c.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+c;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.g.height&&c<=b.g.width)}a&&(b.a.push(e),b.c[e]=!0)}p.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&q(this,b)};h("pagespeed.CriticalImages.checkImageForCriticality",function(b){n.checkImageForCriticality(b)});h("pagespeed.CriticalImages.checkCriticalImages",function(){r(n)});function r(b){b.b={};for(var d=["IMG","INPUT"],a=[],c=0;c<d.length;++c)a=a.concat(l(document.getElementsByTagName(d[c])));if(0!=a.length&&a[0].getBoundingClientRect){for(c=0;d=a[c];++c)q(b,d);a="oh="+b.l;b.f&&(a+="&n="+b.f);if(d=0!=b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),c=1;c<b.a.length;++c){var e=","+encodeURIComponent(b.a[c]);131072>=a.length+e.length&&(a+=e)}b.i&&(e="&rd="+encodeURIComponent(JSON.stringify(t())),131072>=a.length+e.length&&(a+=e),d=!0);u=a;if(d){c=b.h;b=b.j;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(k){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(v){}}f&&(f.open("POST",c+(-1==c.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}}function t(){var b={},d=document.getElementsByTagName("IMG");if(0==d.length)return{};var a=d[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var c=0;a=d[c];++c){var e=a.getAttribute("data-pagespeed-url-hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].o&&a.height>=b[e].m)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b}var u="";h("pagespeed.CriticalImages.getBeaconData",function(){return u});h("pagespeed.CriticalImages.Run",function(b,d,a,c,e,f){var k=new p(b,d,a,e,f);n=k;c&&m(function(){window.setTimeout(function(){r(k)},0)})});})();pagespeed.CriticalImages.Run('/ngx_pagespeed_beacon','https://www.8051projects.net/plugins/chatbox_menu/chatbox_menu.php','aAz0o6G8a6',true,false,'7g8a8g6I2T0');</script><img src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/9357491a17d84fa4de1ce5eb341decf1" alt="" data-pagespeed-url-hash="1988545801" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+</div>
+<div class="body">
+<div class="time">
+<i class="ace-icon fa fa-clock-o"></i>
+<span class="green"><abbr class="chatbox-date" title="Mon Aug 01 2016, 08:55 PM">8/1/2016</abbr></span>
+</div>
+<div class="name">
+Manu Mishra
+</div>
+<div class="text">
+hi guys if u need c code for SD card interfacing with p89v51rd2 8051 controller system u can see the video of the project and the download the c code form blog http://embeddedinrajasthan.blogspot.in/?view=classic
+</div>
+<div class="tools">
+<button class="btn btn-minier btn-info chatbox-reply">
+<i class="icon-only ace-icon fa fa-share"></i>
+</button>
+</div>
+</div>
+</div>
+<div class="itemdiv dialogdiv">
+<div class="user">
+<img src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/9357491a17d84fa4de1ce5eb341decf1" alt="" data-pagespeed-url-hash="1988545801" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+</div>
+<div class="body">
+<div class="time">
+<i class="ace-icon fa fa-clock-o"></i>
+<span class="green"><abbr class="chatbox-date" title="Mon Aug 01 2016, 08:53 PM">8/1/2016</abbr></span>
+</div>
+<div class="name">
+Manu Mishra
+</div>
+<div class="text">
+hi guys if u need c code for finger print security system u can see the video of the project and the download the c code form blog http://embeddedinrajasthan.blogspot.in/?view=classic
+</div>
+<div class="tools">
+<button class="btn btn-minier btn-info chatbox-reply">
+<i class="icon-only ace-icon fa fa-share"></i>
+</button>
+</div>
+</div>
+</div>
+<div class="itemdiv dialogdiv">
+<div class="user">
+<img src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/8e0c5cf7546cb2eea1510bfb13c858b3" alt="ExperimenterUK" data-pagespeed-url-hash="2771889790" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+</div>
+<div class="body">
+<div class="time">
+<i class="ace-icon fa fa-clock-o"></i>
+<span class="green"><abbr class="chatbox-date" title="Tue Jul 19 2016, 11:29 PM">7/19/2016</abbr></span>
+</div>
+<div class="name">
+<a href="https://www.8051projects.net/user.php?id.9602">ExperimenterUK</a>
+</div>
+<div class="text">
+@mhammad 64 bits is 8 bytes.
+</div>
+<div class="tools">
+<button class="btn btn-minier btn-info chatbox-reply">
+<i class="icon-only ace-icon fa fa-share"></i>
+</button>
+</div>
+</div>
+</div>
+<div class="itemdiv dialogdiv">
+<div class="user">
+<img src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/a2250ab0e7f459a72b9351d911e470a1" alt="" data-pagespeed-url-hash="889747438" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+</div>
+<div class="body">
+<div class="time">
+<i class="ace-icon fa fa-clock-o"></i>
+<span class="green"><abbr class="chatbox-date" title="Tue Jul 19 2016, 01:26 PM">7/19/2016</abbr></span>
+</div>
+<div class="name">
+mhammad kassem
+</div>
+<div class="text">
+hello! i want to know how to use UART in mikroc , I want to receive 64 bits from another microcontroller and i dont know how to start my code to receive the 64 bits...any help?
+</div>
+<div class="tools">
+<button class="btn btn-minier btn-info chatbox-reply">
+<i class="icon-only ace-icon fa fa-share"></i>
+</button>
+</div>
+</div>
+</div>
+<div class="itemdiv dialogdiv">
+<div class="user">
+<img src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/8e0c5cf7546cb2eea1510bfb13c858b3" alt="ExperimenterUK" data-pagespeed-url-hash="2771889790" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+</div>
+<div class="body">
+<div class="time">
+<i class="ace-icon fa fa-clock-o"></i>
+<span class="green"><abbr class="chatbox-date" title="Tue Jul 19 2016, 02:02 AM">7/19/2016</abbr></span>
+</div>
+<div class="name">
+<a href="https://www.8051projects.net/user.php?id.9602">ExperimenterUK</a>
+</div>
+<div class="text">
+@meena.. are you still having trouble ?
+</div>
+<div class="tools">
+<button class="btn btn-minier btn-info chatbox-reply">
+<i class="icon-only ace-icon fa fa-share"></i>
+</button>
+</div>
+</div>
+</div>
+<div class="itemdiv dialogdiv">
+<div class="user">
+<img src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/1427002b6c9b705f9f84dd9fdab70e45" alt="" data-pagespeed-url-hash="3023308024" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+</div>
+<div class="body">
+<div class="time">
+<i class="ace-icon fa fa-clock-o"></i>
+<span class="green"><abbr class="chatbox-date" title="Sat Jul 16 2016, 03:49 PM">7/16/2016</abbr></span>
+</div>
+<div class="name">
+Meena
+</div>
+<div class="text">
+problem in loading email address while registering.Please help
+</div>
+<div class="tools">
+<button class="btn btn-minier btn-info chatbox-reply">
+<i class="icon-only ace-icon fa fa-share"></i>
+</button>
+</div>
+</div>
+</div>
+<div class="itemdiv dialogdiv">
+<div class="user">
+<img src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/f909857483330959fc1cc7fe18cfc38a" alt="" data-pagespeed-url-hash="4181453983" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+</div>
+<div class="body">
+<div class="time">
+<i class="ace-icon fa fa-clock-o"></i>
+<span class="green"><abbr class="chatbox-date" title="Sun Jul 10 2016, 08:20 PM">7/10/2016</abbr></span>
+</div>
+<div class="name">
+shockwave
+</div>
+<div class="text">
+could you please provide a sample code that controling LED using bluetooth HC-05 interfacing pic16f877a thank you!
+</div>
+<div class="tools">
+<button class="btn btn-minier btn-info chatbox-reply">
+<i class="icon-only ace-icon fa fa-share"></i>
+</button>
+</div>
+</div>
+</div>
+<div class="itemdiv dialogdiv">
+<div class="user">
+<img src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/f909857483330959fc1cc7fe18cfc38a" alt="" data-pagespeed-url-hash="4181453983" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+</div>
+<div class="body">
+<div class="time">
+<i class="ace-icon fa fa-clock-o"></i>
+<span class="green"><abbr class="chatbox-date" title="Sun Jul 10 2016, 08:19 PM">7/10/2016</abbr></span>
+</div>
+<div class="name">
+shockwave
+</div>
+<div class="text">
+Help!
+</div>
+<div class="tools">
+<button class="btn btn-minier btn-info chatbox-reply">
+<i class="icon-only ace-icon fa fa-share"></i>
+</button>
+</div>
+</div>
+</div>
+<div class="itemdiv dialogdiv">
+<div class="user">
+<img src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/8e0c5cf7546cb2eea1510bfb13c858b3" alt="ExperimenterUK" data-pagespeed-url-hash="2771889790" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+</div>
+<div class="body">
+<div class="time">
+<i class="ace-icon fa fa-clock-o"></i>
+<span class="green"><abbr class="chatbox-date" title="Sat Jul 09 2016, 10:55 PM">7/9/2016</abbr></span>
+</div>
+<div class="name">
+<a href="https://www.8051projects.net/user.php?id.9602">ExperimenterUK</a>
+</div>
+<div class="text">
+@Santhana krishnan post in forum to discuss your problem
+</div>
+<div class="tools">
+<button class="btn btn-minier btn-info chatbox-reply">
+<i class="icon-only ace-icon fa fa-share"></i>
+</button>
+</div>
+</div>
+</div>
+<div class="itemdiv dialogdiv">
+<div class="user">
+<img src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/11879d74dc056089ff0107afba9ef803" alt="" data-pagespeed-url-hash="2459494643" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+</div>
+<div class="body">
+<div class="time">
+<i class="ace-icon fa fa-clock-o"></i>
+<span class="green"><abbr class="chatbox-date" title="Thu Jul 07 2016, 02:56 PM">7/7/2016</abbr></span>
+</div>
+<div class="name">
+Santhana krishnan
+</div>
+<div class="text">
+Hi i program atmega 32 it was functiining corectly but now aref pins voltage 2.56 is droped to .85 volts also a ports input viltage also dropped so anologe inpit not funcitonig please help me to find out the problem
+</div>
+<div class="tools">
+<button class="btn btn-minier btn-info chatbox-reply">
+<i class="icon-only ace-icon fa fa-share"></i>
+</button>
+</div>
+</div>
+</div>
+</div><div class="hidden" id="cb_lastpost">29176</div></div><div id="ascrail2000" class="nicescroll-rails nicescroll-rails-vr" style="width: 8px; z-index: auto; cursor: default; position: absolute; top: 0px; right: 0px; display: block; height: 319px; opacity: 0;"><div class="nicescroll-cursors" style="position: relative; top: 0px; float: right; width: 6px; height: 89px; border: 1px solid rgb(255, 255, 255); border-radius: 5px; background-color: rgb(66, 66, 66); background-clip: padding-box;"></div></div><div id="ascrail2000-hr" class="nicescroll-rails nicescroll-rails-hr" style="height: 8px; z-index: auto; position: absolute; left: 0px; bottom: 0px; cursor: default; display: none; width: 353px; opacity: 0;"><div class="nicescroll-cursors" style="position: absolute; top: 0px; height: 6px; width: 353px; border: 1px solid rgb(255, 255, 255); border-radius: 5px; background-color: rgb(66, 66, 66); background-clip: padding-box;"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="space8"></div>
+<div class="widget-box transparent">
+<div class="widget-header">
+<h3 class="widget-title lighter"><i class="icon-rss orange"></i> Recent</h3>
+<div class="widget-toolbar no-border">
+<ul class="nav nav-tabs" id="recent-tab">
+<li class="active">
+<a data-toggle="tab" href="https://www.8051projects.net/keypad-interfacing/introduction.php#list_recent_menu_download">Downloads</a>
+</li>
+<li>
+<a data-toggle="tab" href="https://www.8051projects.net/keypad-interfacing/introduction.php#list_recent_menu_comment">Comments</a>
+</li>
+<li>
+<a data-toggle="tab" href="https://www.8051projects.net/keypad-interfacing/introduction.php#list_recent_menu_members">Members</a>
+</li>
+</ul>
+</div>
+</div>
+<div class="widget-body">
+<div class="widget-main padding-4">
+<div class="tab-content padding-8 overflow-visible">
+<br><div id="list_recent_menu_download" class="tab-pane in active"> <h4 class="smaller lighter green"> <i class="ace-icon fa fa-list"></i> Downloads<br> </h4> <ul class="item-list"> <li class="item-orange clearfix"> <a href="https://www.8051projects.net/download.php?view.254" title="Simple 3 Digit Temperature Meter">Simple 3 Digit Temperature Meter</a> by: Rakesh Suthar in: <a href="https://www.8051projects.net/download.php?list.18">PIC Projects</a> <br><i class="ace-icon fa fa-clock-o"></i> <abbr class="easydate" title="Sat Jul 05 2014, 06:15 AM">7/5/2014</abbr> </li> <li class="item-orange clearfix"> <a href="https://www.8051projects.net/download.php?view.205" title="Electronic Voting machine with Managed Control Unit (Project Report Included)">Electronic Voting machine with Managed Control Unit (Project Report Included)</a> by: Shivani, Geetika Gupta, Vibhore Aggarwal, Megha Singh in: <a href="https://www.8051projects.net/download.php?list.4">8051 Projects</a> <br><i class="ace-icon fa fa-clock-o"></i> <abbr class="easydate" title="Sat May 17 2014, 02:16 PM">5/17/2014</abbr> </li> <li class="item-orange clearfix"> <a href="https://www.8051projects.net/download.php?view.253" title="LED Scrolling message Display using 8051">LED Scrolling message Display using 8051</a> by: Pratik Suthar in: <a href="https://www.8051projects.net/download.php?list.4">8051 Projects</a> <br><i class="ace-icon fa fa-clock-o"></i> <abbr class="easydate" title="Thu May 08 2014, 10:58 AM">5/8/2014</abbr> </li> <li class="item-orange clearfix"> <a href="https://www.8051projects.net/download.php?view.252" title="Smart Home using GSM, Bluetooth and Android (with project report and ppt)">Smart Home using GSM, Bluetooth and Android (with project report and ppt)</a> by: Gaurav Khadasane in: <a href="https://www.8051projects.net/download.php?list.7">AVR Projects</a> <br><i class="ace-icon fa fa-clock-o"></i> <abbr class="easydate" title="Wed Apr 30 2014, 08:00 PM">4/30/2014</abbr> </li> <li class="item-orange clearfix"> <a href="https://www.8051projects.net/download.php?view.251" title="Arduino based GPS data Logger">Arduino based GPS data Logger</a> by: Santosh Mishra in: <a href="https://www.8051projects.net/download.php?list.7">AVR Projects</a> <br><i class="ace-icon fa fa-clock-o"></i> <abbr class="easydate" title="Mon Mar 31 2014, 10:25 AM">3/31/2014</abbr> </li> </ul></div><div id="list_recent_menu_comment" class="tab-pane"> <h4 class="smaller lighter green"> <i class="ace-icon fa fa-list"></i> Comments<br> </h4> <ul class="item-list"> <li class="item-orange clearfix"> <a href="https://www.8051projects.net/download.php?view.233" title="PIC Industrial and Domestic Timer (Relay Controller)">PIC Industrial and Domestic Timer (Relay Controller)</a> by: kavin_eees <br> <br><i class="ace-icon fa fa-clock-o"></i> <abbr class="easydate" title="Wed Jul 20 2016, 07:06 AM">7/20/2016</abbr> </li> <li class="item-orange clearfix"> <a href="https://www.8051projects.net/download.php?view.206" title="Digital Lock Using AT89C2051 with LCD and Keypad - Assembly">Digital Lock Using AT89C2051 with LCD and Keypad - Assembly</a> by: Muhammad Ahmad <br> <br><i class="ace-icon fa fa-clock-o"></i> <abbr class="easydate" title="Thu May 05 2016, 11:50 AM">5/5/2016</abbr> </li> <li class="item-orange clearfix"> <a href="https://www.8051projects.net/download.php?view.205" title="Electronic Voting machine with Managed Control Unit (Project Report Included)">Electronic Voting machine with Managed Control Unit (Project Report Included)</a> by: A basit <br> <br><i class="ace-icon fa fa-clock-o"></i> <abbr class="easydate" title="Sun Apr 17 2016, 09:33 AM">4/17/2016</abbr> </li> <li class="item-orange clearfix"> <a href="https://www.8051projects.net/download.php?view.247" title="Android Controlled Robot using 8051 Microcontroller">Android Controlled Robot using 8051 Microcontroller</a> by: junaid_tammi@hotmail.com <br> <br><i class="ace-icon fa fa-clock-o"></i> <abbr class="easydate" title="Wed Apr 13 2016, 10:52 AM">4/13/2016</abbr> </li> <li class="item-orange clearfix"> <a href="https://www.8051projects.net/download.php?view.248" title="GSM Notice Board">GSM Notice Board</a> by: sanju1234 <br> <br><i class="ace-icon fa fa-clock-o"></i> <abbr class="easydate" title="Wed Apr 13 2016, 03:35 AM">4/13/2016</abbr> </li> </ul></div><div id="list_recent_menu_members" class="tab-pane"> <div class="clearfix"> <div class="itemdiv memberdiv"> <div class="user"> <img data-src="//www.gravatar.com/avatar/2d1b615ffce7ae8100848fd153d78000?s=32&amp;d=identicon" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"> </div> <div class="body"> <div class="name"> mariahcarey<br> </div> <div class="time"> <i class="ace-icon fa fa-clock-o"></i> <span class="green"><abbr class="easydate" title="Sat Aug 06 2016, 11:38 AM">4 days ago</abbr></span> </div> </div> </div> <div class="itemdiv memberdiv"> <div class="user"> <img data-src="//www.gravatar.com/avatar/cff7013987070e6c8d56db6fb47c36c9?s=32&amp;d=identicon" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"> </div> <div class="body"> <div class="name"> dann11<br> </div> <div class="time"> <i class="ace-icon fa fa-clock-o"></i> <span class="green"><abbr class="easydate" title="Thu Jul 28 2016, 09:43 PM">7/28/2016</abbr></span> </div> </div> </div> <div class="itemdiv memberdiv"> <div class="user"> <img data-src="//www.gravatar.com/avatar/29d478ab70f389604baabdcbf8bd3bc8?s=32&amp;d=identicon" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"> </div> <div class="body"> <div class="name"> adithyapaip<br> </div> <div class="time"> <i class="ace-icon fa fa-clock-o"></i> <span class="green"><abbr class="easydate" title="Thu Jul 21 2016, 05:45 PM">7/21/2016</abbr></span> </div> </div> </div> <div class="itemdiv memberdiv"> <div class="user"> <img data-src="//www.gravatar.com/avatar/291afc6b2d328a355e605fdf6fdf44b5?s=32&amp;d=identicon" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"> </div> <div class="body"> <div class="name"> celu<br> </div> <div class="time"> <i class="ace-icon fa fa-clock-o"></i> <span class="green"><abbr class="easydate" title="Thu Jul 21 2016, 05:27 PM">7/21/2016</abbr></span> </div> </div> </div> <div class="itemdiv memberdiv"> <div class="user"> <img data-src="//www.gravatar.com/avatar/86fa5ef6802f0c5d073faea8b9339d4f?s=32&amp;d=identicon" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"> </div> <div class="body"> <div class="name"> Aiko<br> </div> <div class="time"> <i class="ace-icon fa fa-clock-o"></i> <span class="green"><abbr class="easydate" title="Wed Jul 20 2016, 01:51 PM">7/20/2016</abbr></span> </div> </div> </div> <div class="itemdiv memberdiv"> <div class="user"> <img data-src="//www.gravatar.com/avatar/545a00d1b5c94b6aae55ee80ff0808bb?s=32&amp;d=identicon" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"> </div> <div class="body"> <div class="name"> JorgeG<br> </div> <div class="time"> <i class="ace-icon fa fa-clock-o"></i> <span class="green"><abbr class="easydate" title="Sat Jul 16 2016, 07:19 PM">7/16/2016</abbr></span> </div> </div> </div> <div class="itemdiv memberdiv"> <div class="user"> <img data-src="//www.gravatar.com/avatar/a57eb81bbe61164844bdfe13c55bf6d6?s=32&amp;d=identicon" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"> </div> <div class="body"> <div class="name"> Piotrekk<br> </div> <div class="time"> <i class="ace-icon fa fa-clock-o"></i> <span class="green"><abbr class="easydate" title="Wed Jul 06 2016, 09:35 AM">7/6/2016</abbr></span> </div> </div> </div> <div class="itemdiv memberdiv"> <div class="user"> <img data-src="//www.gravatar.com/avatar/79f74ad1ae760cd5509e91ca6a632817?s=32&amp;d=identicon" alt="" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"> </div> <div class="body"> <div class="name"> dyoussef<br> </div> <div class="time"> <i class="ace-icon fa fa-clock-o"></i> <span class="green"><abbr class="easydate" title="Wed Jun 29 2016, 07:29 PM">6/29/2016</abbr></span> </div> </div> </div> </div></div>
+</div>
+</div>
+</div>
+</div>
+<div class="widget-box">
+<div class="widget-header widget-header-small">
+<h4 class="widget-title lighter smaller">Online</h4>
+</div>
+<div class="widget-body">
+<div class="widget-body-inner">
+<div class="widget-main">
+Guests: 36, Members: 0 ...<br><br>most ever online: 182184<br>(Members: , Guests: 182184) on 06 Aug 2010: 05:37 AM<br><br>Members: 37777<br>Newest member: <a href="https://www.8051projects.net/user47880.html">mariahcarey</a>
+</div>
+</div>
+</div>
+</div>
+<div class="space-8"></div>
+<div class="widget-box">
+<div class="widget-header widget-header-small">
+<h4 class="widget-title lighter smaller">Trending Topics</h4>
+</div>
+<div class="widget-body">
+<div class="widget-body-inner">
+<div class="widget-main">
+<div><a href="https://www.8051projects.net/tags/hellow" style="font-size: 100%;" title="1 things tagged with hellow">hellow</a> &nbsp;&nbsp;<a href="https://www.8051projects.net/tags/flying-robots" style="font-size: 150%;" title="2 things tagged with flying robots">flying robots</a> &nbsp;&nbsp;<a href="https://www.8051projects.net/tags/fat-filesystem" style="font-size: 100%;" title="1 things tagged with fat filesystem">fat filesystem</a> &nbsp;&nbsp;<a href="https://www.8051projects.net/tags/op-amp-with-programmable-gain" style="font-size: 100%;" title="1 things tagged with Op Amp with Programmable Gain">Op Amp with Programmable Gain</a> &nbsp;&nbsp;<a href="https://www.8051projects.net/tags/fan-speed" style="font-size: 100%;" title="1 things tagged with fan speed">fan speed</a> &nbsp;&nbsp;<a href="https://www.8051projects.net/tags/sync-signals" style="font-size: 100%;" title="1 things tagged with sync signals">sync signals</a> &nbsp;&nbsp;<a href="https://www.8051projects.net/tags/sms-read-gsm-modem-assembly" style="font-size: 150%;" title="2 things tagged with sms read gsm modem assembly">sms read gsm modem assembly</a> &nbsp;&nbsp;<a href="https://www.8051projects.net/tags/mtech" style="font-size: 100%;" title="1 things tagged with mtech">mtech</a> &nbsp;&nbsp;<a href="https://www.8051projects.net/tags/two-axis-attitude-sensor-mems-accelerometer" style="font-size: 100%;" title="1 things tagged with two-axis attitude sensor MEMS accelerometer">two-axis attitude sensor MEMS accelerometer</a> &nbsp;&nbsp;<a href="https://www.8051projects.net/tags/rtc-interfacing" style="font-size: 150%;" title="2 things tagged with RTC interfacing">RTC interfacing</a> &nbsp;&nbsp;<a href="https://www.8051projects.net/tags/netwroking" style="font-size: 100%;" title="1 things tagged with netwroking">netwroking</a> &nbsp;&nbsp;<a href="https://www.8051projects.net/tags/advanced-system-on-chip" style="font-size: 100%;" title="1 things tagged with Advanced System-on-Chip">Advanced System-on-Chip</a> &nbsp;&nbsp;<a href="https://www.8051projects.net/tags/simon-pic-project" style="font-size: 100%;" title="1 things tagged with simon pic project">simon pic project</a> &nbsp;&nbsp;<a href="https://www.8051projects.net/tags/waveguides-and-resonators-ebook" style="font-size: 100%;" title="1 things tagged with waveguides and resonators ebook">waveguides and resonators ebook</a> &nbsp;&nbsp;<a href="https://www.8051projects.net/tags/moving-message-on-lcd-with-pc-interfacing" style="font-size: 100%;" title="1 things tagged with moving message on lcd with pc interfacing">moving message on lcd with pc interfacing</a> &nbsp;&nbsp;<a href="https://www.8051projects.net/tags/laplace-transform" style="font-size: 100%;" title="1 things tagged with laplace transform">laplace transform</a> &nbsp;&nbsp;<a href="https://www.8051projects.net/tags/measurement" style="font-size: 100%;" title="1 things tagged with measurement">measurement</a> &nbsp;&nbsp;<a href="https://www.8051projects.net/tags/spi" style="font-size: 250%;" title="4 things tagged with spi">spi</a> &nbsp;&nbsp;<a href="https://www.8051projects.net/tags/kullu-manali" style="font-size: 100%;" title="1 things tagged with kullu manali">kullu manali</a> &nbsp;&nbsp;<a href="https://www.8051projects.net/tags/techometer-project" style="font-size: 100%;" title="1 things tagged with techometer project">techometer project</a> &nbsp;&nbsp;</div>
+<div style="text-align:center;"><a href="http://www.8051projects.net/trending-topics/">more tags</a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="space-8"></div>
+</div> <div class="col-xs-12 col-sm-6 col-md-12 col-lg-12"> <div class="timeline-container">
+<div class="timeline-items">
+<div class="timeline-label">
+ 
+<span class="label label-primary arrowed-in-right label-lg">
+<b>Forum Activity</b>
+</span>
+ 
+</div>
+<div class="timeline-item clearfix">
+<div class="timeline-info">
+<img data-src="//www.gravatar.com/avatar/8e0c5cf7546cb2eea1510bfb13c858b3?s=42&amp;d=identicon" alt="ExperimenterUK Avatar" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+ 
+</div>
+<div class="widget-box transparent">
+<div class="widget-header widget-header-small">
+<h5 class="widget-title smaller grey">
+ 
+Posted By <a class="blue" href="https://www.8051projects.net/keypad-interfacing/introduction.php#">ExperimenterUK</a>
+</h5>
+<span class="widget-toolbar no-border">
+<i class="ace-icon fa fa-clock-o bigger-110"></i>
+<abbr class="easydate" title="Mon Aug 01 2016, 05:26 AM">8/1/2016</abbr>
+</span>
+</div>
+<div class="widget-body">
+<div class="widget-main">
+ 
+<div class="grey"><i class="ace-icon fa fa-comments bigger-110"></i> <a href="https://www.8051projects.net/t65035/new-ideas-regarding-projects/one-sconds-delay-fron-p12.htm#post_65043">one sconds delay fron p1.2</a></div>
+is working nowugoo5000Great, thanks for letting u...
+<div class="space-6"></div>
+ 
+</div>
+</div>
+</div>
+</div>
+<div class="timeline-item clearfix">
+<div class="timeline-info">
+<img data-src="//www.gravatar.com/avatar/fd94477343354a0aaf6f60ba5be9cc42?s=42&amp;d=identicon" alt="ugoo5000 Avatar" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+ 
+</div>
+<div class="widget-box transparent">
+<div class="widget-header widget-header-small">
+<h5 class="widget-title smaller grey">
+ 
+Posted By <a class="blue" href="https://www.8051projects.net/keypad-interfacing/introduction.php#">ugoo5000</a>
+</h5>
+<span class="widget-toolbar no-border">
+<i class="ace-icon fa fa-clock-o bigger-110"></i>
+<abbr class="easydate" title="Sat Jul 30 2016, 07:31 AM">7/30/2016</abbr>
+</span>
+</div>
+<div class="widget-body">
+<div class="widget-main">
+ 
+<div class="grey"><i class="ace-icon fa fa-comments bigger-110"></i> <a href="https://www.8051projects.net/t65035/new-ideas-regarding-projects/one-sconds-delay-fron-p12.htm#post_65042">one sconds delay fron p1.2</a></div>
+is working noworg 00hmov p1,#11111111bmov p3,#1111...
+<div class="space-6"></div>
+ 
+</div>
+</div>
+</div>
+</div>
+<div class="timeline-item clearfix">
+<div class="timeline-info">
+<img data-src="//www.gravatar.com/avatar/fd94477343354a0aaf6f60ba5be9cc42?s=42&amp;d=identicon" alt="ugoo5000 Avatar" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+ 
+</div>
+<div class="widget-box transparent">
+<div class="widget-header widget-header-small">
+<h5 class="widget-title smaller grey">
+ 
+Posted By <a class="blue" href="https://www.8051projects.net/keypad-interfacing/introduction.php#">ugoo5000</a>
+</h5>
+<span class="widget-toolbar no-border">
+<i class="ace-icon fa fa-clock-o bigger-110"></i>
+<abbr class="easydate" title="Sat Jul 30 2016, 06:40 AM">7/30/2016</abbr>
+</span>
+</div>
+<div class="widget-body">
+<div class="widget-main">
+ 
+<div class="grey"><i class="ace-icon fa fa-comments bigger-110"></i> <a href="https://www.8051projects.net/t65035/new-ideas-regarding-projects/one-sconds-delay-fron-p12.htm#post_65041">one sconds delay fron p1.2</a></div>
+when i press a button in p3.0,the counter will st...
+<div class="space-6"></div>
+ 
+</div>
+</div>
+</div>
+</div>
+<div class="timeline-item clearfix">
+<div class="timeline-info">
+<img data-src="//www.gravatar.com/avatar/fd94477343354a0aaf6f60ba5be9cc42?s=42&amp;d=identicon" alt="ugoo5000 Avatar" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+ 
+</div>
+<div class="widget-box transparent">
+<div class="widget-header widget-header-small">
+<h5 class="widget-title smaller grey">
+ 
+Posted By <a class="blue" href="https://www.8051projects.net/keypad-interfacing/introduction.php#">ugoo5000</a>
+</h5>
+<span class="widget-toolbar no-border">
+<i class="ace-icon fa fa-clock-o bigger-110"></i>
+<abbr class="easydate" title="Sat Jul 30 2016, 06:30 AM">7/30/2016</abbr>
+</span>
+</div>
+<div class="widget-body">
+<div class="widget-main">
+ 
+<div class="grey"><i class="ace-icon fa fa-comments bigger-110"></i> <a href="https://www.8051projects.net/t65035/new-ideas-regarding-projects/one-sconds-delay-fron-p12.htm#post_65040">one sconds delay fron p1.2</a></div>
+proteus file
+Attachment
+...
+<div class="space-6"></div>
+ 
+</div>
+</div>
+</div>
+</div>
+<div class="timeline-item clearfix">
+<div class="timeline-info">
+<img data-src="//www.gravatar.com/avatar/8e0c5cf7546cb2eea1510bfb13c858b3?s=42&amp;d=identicon" alt="ExperimenterUK Avatar" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+ 
+</div>
+<div class="widget-box transparent">
+<div class="widget-header widget-header-small">
+<h5 class="widget-title smaller grey">
+ 
+Posted By <a class="blue" href="https://www.8051projects.net/keypad-interfacing/introduction.php#">ExperimenterUK</a>
+</h5>
+<span class="widget-toolbar no-border">
+<i class="ace-icon fa fa-clock-o bigger-110"></i>
+<abbr class="easydate" title="Fri Jul 29 2016, 11:34 PM">7/29/2016</abbr>
+</span>
+</div>
+<div class="widget-body">
+<div class="widget-main">
+ 
+<div class="grey"><i class="ace-icon fa fa-comments bigger-110"></i> <a href="https://www.8051projects.net/t65035/new-ideas-regarding-projects/one-sconds-delay-fron-p12.htm#post_65039">one sconds delay fron p1.2</a></div>
+Your code does not count at all, it produces a one...
+<div class="space-6"></div>
+ 
+</div>
+</div>
+</div>
+</div>
+<div class="timeline-item clearfix">
+<div class="timeline-info">
+<img data-src="//www.gravatar.com/avatar/fd94477343354a0aaf6f60ba5be9cc42?s=42&amp;d=identicon" alt="ugoo5000 Avatar" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+ 
+</div>
+<div class="widget-box transparent">
+<div class="widget-header widget-header-small">
+<h5 class="widget-title smaller grey">
+ 
+Posted By <a class="blue" href="https://www.8051projects.net/keypad-interfacing/introduction.php#">ugoo5000</a>
+</h5>
+<span class="widget-toolbar no-border">
+<i class="ace-icon fa fa-clock-o bigger-110"></i>
+<abbr class="easydate" title="Fri Jul 29 2016, 07:49 PM">7/29/2016</abbr>
+</span>
+</div>
+<div class="widget-body">
+<div class="widget-main">
+ 
+<div class="grey"><i class="ace-icon fa fa-comments bigger-110"></i> <a href="https://www.8051projects.net/t65035/new-ideas-regarding-projects/one-sconds-delay-fron-p12.htm#post_65038">one sconds delay fron p1.2</a></div>
+i want the the counter to be counting in secs with...
+<div class="space-6"></div>
+ 
+</div>
+</div>
+</div>
+</div>
+<div class="timeline-item clearfix">
+<div class="timeline-info">
+<img data-src="//www.gravatar.com/avatar/8e0c5cf7546cb2eea1510bfb13c858b3?s=42&amp;d=identicon" alt="ExperimenterUK Avatar" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+ 
+</div>
+<div class="widget-box transparent">
+<div class="widget-header widget-header-small">
+<h5 class="widget-title smaller grey">
+ 
+Posted By <a class="blue" href="https://www.8051projects.net/keypad-interfacing/introduction.php#">ExperimenterUK</a>
+</h5>
+<span class="widget-toolbar no-border">
+<i class="ace-icon fa fa-clock-o bigger-110"></i>
+<abbr class="easydate" title="Fri Jul 29 2016, 07:31 PM">7/29/2016</abbr>
+</span>
+</div>
+<div class="widget-body">
+<div class="widget-main">
+ 
+<div class="grey"><i class="ace-icon fa fa-comments bigger-110"></i> <a href="https://www.8051projects.net/t65035/new-ideas-regarding-projects/one-sconds-delay-fron-p12.htm#post_65037">one sconds delay fron p1.2</a></div>
+HiYour Proteus file did not upload, be sure to zip...
+<div class="space-6"></div>
+ 
+</div>
+</div>
+</div>
+</div>
+<div class="timeline-item clearfix">
+<div class="timeline-info">
+<img data-src="//www.gravatar.com/avatar/fd94477343354a0aaf6f60ba5be9cc42?s=42&amp;d=identicon" alt="ugoo5000 Avatar" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+ 
+</div>
+<div class="widget-box transparent">
+<div class="widget-header widget-header-small">
+<h5 class="widget-title smaller grey">
+ 
+Posted By <a class="blue" href="https://www.8051projects.net/keypad-interfacing/introduction.php#">ugoo5000</a>
+</h5>
+<span class="widget-toolbar no-border">
+<i class="ace-icon fa fa-clock-o bigger-110"></i>
+<abbr class="easydate" title="Fri Jul 29 2016, 11:50 AM">7/29/2016</abbr>
+</span>
+</div>
+<div class="widget-body">
+<div class="widget-main">
+ 
+<div class="grey"><i class="ace-icon fa fa-comments bigger-110"></i> <a href="https://www.8051projects.net/t65035/new-ideas-regarding-projects/one-sconds-delay-fron-p12.htm#post_65036">one sconds delay fron p1.2</a></div>
+below is the proteus file
+<div class="space-6"></div>
+ 
+</div>
+</div>
+</div>
+</div>
+<div class="timeline-item clearfix">
+<div class="timeline-info">
+<img data-src="//www.gravatar.com/avatar/fd94477343354a0aaf6f60ba5be9cc42?s=42&amp;d=identicon" alt="ugoo5000 Avatar" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+ 
+</div>
+<div class="widget-box transparent">
+<div class="widget-header widget-header-small">
+<h5 class="widget-title smaller grey">
+ 
+Posted By <a class="blue" href="https://www.8051projects.net/keypad-interfacing/introduction.php#">ugoo5000</a>
+</h5>
+<span class="widget-toolbar no-border">
+<i class="ace-icon fa fa-clock-o bigger-110"></i>
+<abbr class="easydate" title="Fri Jul 29 2016, 11:48 AM">7/29/2016</abbr>
+</span>
+</div>
+<div class="widget-body">
+<div class="widget-main">
+ 
+<div class="grey"><i class="ace-icon fa fa-comments bigger-110"></i> <a href="https://www.8051projects.net/t65035/new-ideas-regarding-projects/one-sconds-delay-fron-p12.htm#post_65035">one sconds delay fron p1.2</a></div>
+i am working on a project to generate a continuous...
+<div class="space-6"></div>
+ 
+</div>
+</div>
+</div>
+</div>
+<div class="timeline-item clearfix">
+<div class="timeline-info">
+<img data-src="//www.gravatar.com/avatar/8e0c5cf7546cb2eea1510bfb13c858b3?s=42&amp;d=identicon" alt="ExperimenterUK Avatar" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+ 
+</div>
+<div class="widget-box transparent">
+<div class="widget-header widget-header-small">
+<h5 class="widget-title smaller grey">
+ 
+Posted By <a class="blue" href="https://www.8051projects.net/keypad-interfacing/introduction.php#">ExperimenterUK</a>
+</h5>
+<span class="widget-toolbar no-border">
+<i class="ace-icon fa fa-clock-o bigger-110"></i>
+<abbr class="easydate" title="Sat Jul 23 2016, 07:14 PM">7/23/2016</abbr>
+</span>
+</div>
+<div class="widget-body">
+<div class="widget-main">
+ 
+<div class="grey"><i class="ace-icon fa fa-comments bigger-110"></i> <a href="https://www.8051projects.net/t65033/electronics/sn76007n-what.htm#post_65034">SN76007N what is it ?</a></div>
+I found this datasheet, it is a type of driver.It ...
+<div class="space-6"></div>
+ 
+</div>
+</div>
+</div>
+</div></div>
+</div> </div> </div> </div>  <div id="post-question" class="modal"> <div class="modal-dialog modal-rw"> <div class="modal-content"> </div> </div> </div> <div id="post-project" class="modal"> <div class="modal-dialog modal-rw"> <div class="modal-content"> </div> </div> </div> </div>  </div>  </div>  <div class="footer"> <div class="footer-inner">   <div class="footer-content"> <span class="bigger-120"> <span class="blue bolder">Rickey's World</span> © 2014 </span> &nbsp; &nbsp; <span class="action-buttons"> <a href="https://www.8051projects.net/keypad-interfacing/introduction.php#"> <i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i> </a> <a href="https://www.8051projects.net/keypad-interfacing/introduction.php#"> <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i> </a> <a href="https://www.8051projects.net/keypad-interfacing/introduction.php#"> <i class="ace-icon fa fa-rss-square orange bigger-150"></i> </a> </span> </div>   </div> </div> <a href="https://www.8051projects.net/keypad-interfacing/introduction.php#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse display"> <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i> </a></div> 
+ 
+<!--[if !IE]> -->
+<script data-cfasync="true" src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/jquery.min.js"></script>
+<!-- <![endif]-->
+<!--[if IE]>
+		<script data-cfasync='true' src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<![endif]-->
+<!--[if !IE]> -->
+<script data-cfasync="true">window.jQuery||document.write("<script src='/themes/rwnewtheme/js/jquery.min.js'>"+"<"+"/script>");</script>
+<!-- <![endif]-->
+<!--[if IE]>
+	<script data-cfasync='true' type="text/javascript">
+	 window.jQuery || document.write("<script src='/themes/rwnewtheme/js/jquery1x.min.js'>"+"<"+"/script>");
+	</script>
+	<![endif]-->
+<script data-cfasync="true">if('ontouchstart'in document.documentElement)document.write("<script src='/themes/rwnewtheme/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");</script>
+ 
+<script data-cfasync="true" src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/bootstrap@3.2.0,jquery.gritter,jquery.nicescroll,jquery.lazyloadxt(jquery.lazyloadxt.extra.min.js)"></script>
+<script data-cfasync="true" src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/g=rwtheme.js"></script>
+<script async="" src="./Matrix Keypad interfacing with Microcontrollers tutorial_ - Rickey&#39;s World of Microcontrollers &amp; Microprocessors_files/adsbygoogle.js"></script>
+ 
+<script data-cfasync="true">jQuery(function($){$("head").append($("<link rel=\"stylesheet\" type=\"text/css\" />").attr("href","//cdn.jsdelivr.net/fontawesome/4.1.0/css/font-awesome.css"));$("head").append($("<link rel=\"stylesheet\" type=\"text/css\" />").attr("href","//fonts.googleapis.com/css?family=Open+Sans:400,300"));if(ace.helper.mobile_view()||ace.helper.collapsible()){$("#sidebar1").addClass("responsive");$("#small-login").removeClass("hide");}window.onload=function(){setTimeout(function(){var ad=document.querySelector("ins.adsbygoogle");if(ad&&ad.innerHTML.replace(/\s/g,"").length==0){$("ins.adsbygoogle").parent().html("<blockquote><p class=\"lighter line-height-125\">We have done a lot of work to build this website and its content for which we do not charge any money. Google AdSense ads help pay our server bills.<br />Please whitelist *.8051projects.net in your Adblock settings and support Rickey's World.</p><small>Ajay Bhargav <cite title=\"admin\">(Admin Rickey's World)</cite></small></blockquote>");}},2000);};var $sidebar=$("#sidebar");if(!$sidebar.hasClass("h-sidebar"))return;$(document).on("settings.ace.top_menu",function(ev,event_name,fixed){if(event_name!=="sidebar_fixed")return;var sidebar=$sidebar.get(0);var $window=$(window);if(!fixed&&!(ace.helper.mobile_view()&&ace.helper.collapsible())){$window.on("scroll.ace.top_menu",function(e){var scroll=$window.scrollTop();if(scroll>120){$("#navbar-small").show("slow");}else if(scroll<80){$("#navbar-small").hide("slow");}}).triggerHandler("scroll.ace.top_menu");return;}if(!fixed||(ace.helper.mobile_view()||ace.helper.collapsible())){$sidebar.removeClass("hide-before");ace.helper.removeStyle(sidebar,"margin-top")
+$window.off("scroll.ace.top_menu")
+return;}var done=false;$window.on("scroll.ace.top_menu",function(e){var scroll=$window.scrollTop();scroll=parseInt(scroll/4);if(scroll>17)scroll=17;if(scroll>16){if(!done){$sidebar.addClass("hide-before");$sidebar.addClass("compact");done=true;}}else{if(done){$sidebar.removeClass("hide-before");$sidebar.removeClass("compact");done=false;}}sidebar.style["marginTop"]=(17-scroll)+"px";}).triggerHandler("scroll.ace.top_menu");}).triggerHandler("settings.ace.top_menu",["sidebar_fixed",$sidebar.hasClass("sidebar-fixed")]);$(window).on("resize.ace.top_menu",function(){$(document).triggerHandler("settings.ace.top_menu",["sidebar_fixed",$sidebar.hasClass("sidebar-fixed")]);});function show_message(obj,time){$.gritter.add({title:obj.attr("title"),text:obj.html(),image:obj.data("image"),sticky:false,time:(time>=1000?time:5000),class_name:(obj.data("type")=="error"?'gritter-error':''),});}$('[data-rel=tooltip]').tooltip();$('.footable').footable({breakpoints:{phone:480,tablet:600}});$('#user_login').click(function(e){e.stopPropagation();});var dheight=450-$('#chatbox').height();$('#latest-forum').height(450);$('#latest-forum').niceScroll("#forumwrapper");$("#chatboxwrapper").height(dheight);$("#chatboxwrapper").niceScroll("#chatbox-posts");$("[id^=updatetags]").click(function(){if($(this).next().hasClass("hide"))$(this).next().removeClass("hide");else
+$(this).next().addClass("hide");});var tag_input=$("[id^=tagid]");tag_input.each(function(){try{$(this).tag({placeholder:$(this).attr('placeholder')});}catch(e){$(this).after('<textarea id="'+$(this).attr('id')+'" name="'+$(this).attr('name')+'" rows="3">'+$(this).val()+'</textarea>').remove();}});$(".easydate, .chatbox-date").easydate({live:false});$.fn.exists=function(){return jQuery(this).length>0;}
+if($(".rw-notify").length){$(".rw-notify").each(function(){$(this).hide();$.gritter.add({title:$(this).attr("title"),text:$(this).html(),image:$(this).data("image"),sticky:($(this).data("type")=="chatbox"?false:true),time:$(this).data("time"),class_name:($(this).data("type")=="error"?'gritter-error':''),});});}$(".chatbox-reply").click(function(e){$("#cmessage").focus();});var cb_counter=0;$("#chatbox_modal").hide();$("#chatbox").submit(function(e){e.preventDefault();});function chatbox_post(obj,clrmsg){var postdata=$("#chatbox").serialize()+"&chat_submit="+obj.val()+"&lastpost="+$("#cb_lastpost").html();var jqxr=$.post("/plugins/chatbox_menu/chatbox_menu.php",postdata);jqxr.done(function(data,textStatus,jqXHR){$("#chatbox-posts").html(data);$(".chatbox-date").easydate({live:false});if(clrmsg)$("#cmessage").val("");if($("#cb_error").exists()){show_message($("#cb_error"),5000);}if($("#cb_newmsg").exists()){show_message($("#cb_newmsg"),10000);}$(".chatbox-reply").click(function(e){$("#cmessage").focus();});});}$("#chat_submit").click(function(event){if(cb_counter>20)setTimeout(cb_autorefresh,15000);cb_counter=0;if(checkemail($("#cb_email")))chatbox_post($(this),true);event.stopPropagation();});$("#chat_refresh").click(function(event){chatbox_post($(this),false);event.stopPropagation();});function cb_autorefresh(){cb_counter++;if(cb_counter<21){chatbox_post($("#chat_refresh"));setTimeout(cb_autorefresh,15000);}}if($("#chatbox").exists())setTimeout(cb_autorefresh,5000);$("[data-rel=popover]").click(function(e){e.preventDefault();});$("[data-rel=popover]").popover({html:true});$("#colorpick-btns .colorpick-btn").click(function(e){e.preventDefault();addtext('[color='+$(this).data("color")+'][/color]');});$(".wysiwyg-style2 .btn-group > a.btn[title]").tooltip({container:'body',animation:false});$("#attach-box").hide();var boxid=0;var count=0;$("#attach-button").click(function(e){boxid++;count++
+$("#attach-box").show().append('<div class="row"><div class="col-xs-7" style="margin:0"><button id="id-input-file-rem-'+boxid+'" class="btn btn-minier btn-danger pull-right"><i class="ace-icon fa fa-trash-o"></i></button><div class="col-xs-11" style="margin:0"><input type="file" id="id-input-file-'+boxid+'" name="file_userfile[]"></div></div></div>');$("#id-input-file-"+boxid).ace_file_input({no_file:'No File ...',btn_choose:'Choose',btn_change:'Change',droppable:false,onchange:null,thumbnail:false});$("#id-input-file-rem-"+boxid).click(function(e){$(this).parent().remove();count--;$("#attach-button").removeAttr("disabled");});if(count==5){$("#attach-button").attr("disabled","disabled");}e.preventDefault();});$(".profile-activity").hover(function(){$(this).find(".ace-icon fa fa-hand-right").addClass("ace-icon fa fa-animated-hand-pointer");},function(){$(this).find(".ace-icon fa fa-hand-right").removeClass("ace-icon fa fa-animated-hand-pointer");});if($("#sidead").exists()){var sideadtop=$("#sidead").offset().top;$(window).scroll(function(event){if($(this).scrollTop()>sideadtop){$("#sidead").addClass("sideadfix");}else{$("#sidead").removeClass("sideadfix");}});}function formalert(obj,status){if(status)obj.parents(".form-group").removeClass("has-error").addClass("has-success");else
+obj.parents(".form-group").addClass("has-error");}function checkemail(obj){var regex=/^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;var status=regex.test(obj.val());formalert(obj,status);return status;}function checktext(obj,minlen){var status=obj.val().length>minlen;formalert(obj,status);return status;}$("#author_name").change(function(){checktext($(this),1);});$("#author_email").change(function(){checkemail($(this));});$("#list_recent_page_news,#list_recent_menu_download").addClass("in active");function show_box(id){$('.widget-box.visible').removeClass('visible');$('#'+id).addClass('visible');}window.prettyPrint&&prettyPrint();$("#post-question").on("show.bs.modal",function(e){if($("#post-question .modal-header").exists())return;var jxr=$.ajax({type:"GET",url:"/themes/rwnewtheme/wizard.php?type=q",dataType:"html",timeout:5000,});jxr.done(function(data){$("#post-question .modal-content").html(data);$("#post-question .modal-header").ace_wizard();$("#qcategory").change(function(){$("#qforum").load("/themes/rwnewtheme/wizard.php?c="+$("#qcategory").val());});$("#post-question .modal-header").on("change",function(e,item){if((item.step===2)&&(item.direction==="next")){if($("#qforum").val()=="0"){$("#qselect-error").show();return e.preventDefault();}else{if(ace.helper.mobile_view()||ace.helper.collapsible()){window.location="../plugins/forum/forum_post.php?nt."+$("#qforum").val();return e.preventDefault();}$("#qdataform").attr("action","../plugins/forum/forum_post.php?nt."+$("#qforum").val());$("#qselect-error").hide();}}if((item.step===3)&&(item.direction==="next")){if(($("#subject").val().length<15)||($("#post").val().length<30)){$("#qdata-error").show();return e.preventDefault();}else{$("#qdata-error").hide();}}});$("#post-question .modal-header").on("finished",function(e,item){$("#qdataform").submit();});});jxr.fail(function(jqXHR,textStatus){$("#post-question .modal-content").html("Failed to load page... Please try again!");});});$("#post-project").on("show.bs.modal",function(e){if($("#post-project .modal-header").exists())return;var jxr=$.ajax({type:"GET",url:"/themes/rwnewtheme/wizard.php?type=p",dataType:"html",timeout:5000,});jxr.done(function(data){$("#post-project .modal-content").html(data);});jxr.fail(function(jqXHR,textStatus){$("#post-project .modal-content").html("Failed to load page... Please try again!");});});$(".dropdown-colorpicker").click(function(e){setTimeout(function(){$(window).lazyLoadXT();},50);});$('.toolbar a[data-target]').click(function(e){e.preventDefault();var target=$(this).data('target');$('.widget-box.visible').removeClass('visible');$(target).addClass('visible');});});ace.vars['base']='..';</script>
+ 
+ 
+ 
+<script>SyncWithServerTime('1470819268','8051projects.net');</script>
+</body></html>
