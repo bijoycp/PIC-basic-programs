@@ -1,0 +1,54 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+DelayMs	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\delay.c	11;"	f	line:11	signature:(unsigned char cnt)
+DelayMs	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\delay.h	50;"	p	line:50	signature:(unsigned char)
+DelayUs::(x){unsignedchar_dcnt;	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\delay.h	41;"	d	line:41
+DelayUs::(x){unsignedchar_dcnt;	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\delay.h	47;"	d	line:47
+E::RD3	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.h	2;"	d	line:2
+KHZ::*1	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\delay.h	34;"	d	line:34
+LCD_STROBE	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.c	31;"	f	line:31	signature:(void)
+LCD_STROBE	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.h	7;"	p	line:7	signature:(void)
+MHZ::*1000L	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\delay.h	33;"	d	line:33
+RS::RD2	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.h	1;"	d	line:1
+XTAL_FREQ::20MHZ	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\delay.h	30;"	d	line:30
+_XTAL_FREQ::20000000	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.c	4;"	d	line:4	file:
+curser	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.c	107;"	f	line:107	signature:(unsigned char cur)
+curser	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.h	13;"	p	line:13	signature:(unsigned char)
+curser_shift_left	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.c	122;"	f	line:122	signature:(void)
+curser_shift_left	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.h	15;"	p	line:15	signature:(void)
+curser_shift_right	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.c	128;"	f	line:128	signature:(void)
+curser_shift_right	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.h	16;"	p	line:16	signature:(void)
+delay	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\delay.c	30;"	f	line:30	signature:(unsigned int dly)
+delay	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\delay.h	51;"	p	line:51	signature:(unsigned int dly)
+display_shift	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.c	116;"	f	line:116	signature:(void)
+display_shift	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.h	14;"	p	line:14	signature:(void)
+dly1	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\delay.c	32;"	l	line:32
+eeprom_read	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\EEPROM.c	16;"	f	line:16	signature:(unsigned char adrs)
+eeprom_read	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\EEPROM.h	2;"	p	line:2	signature:(unsigned char)
+eeprom_write	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\EEPROM.c	4;"	f	line:4	signature:(unsigned char adrs,unsigned char data)
+eeprom_write	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\EEPROM.h	1;"	p	line:1	signature:(unsigned char,unsigned char)
+i	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\delay.c	20;"	l	line:20
+k	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\main.c	5;"	v	line:5
+lcd_clear	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.c	66;"	f	line:66	signature:(void)
+lcd_clear	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.h	10;"	p	line:10	signature:(void)
+lcd_data::PORTD	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.h	3;"	d	line:3
+lcd_data_dir::TRISD	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.h	4;"	d	line:4
+lcd_goto	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.c	76;"	f	line:76	signature:(unsigned char line, unsigned char pos)
+lcd_goto	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.h	12;"	p	line:12	signature:(unsigned char,unsigned char)
+lcd_init	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.c	12;"	f	line:12	signature:(void)
+lcd_init	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.h	6;"	p	line:6	signature:(void)
+lcd_putch	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.c	71;"	f	line:71	signature:(char c)
+lcd_putch	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.h	11;"	p	line:11	signature:(char)
+lcd_puts	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.c	59;"	f	line:59	signature:(const char * s)
+lcd_puts	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.h	9;"	p	line:9	signature:(const char * s)
+main	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\main.c	6;"	f	line:6
+mode	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.c	10;"	v	line:10
+send	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.c	37;"	f	line:37	signature:(unsigned char x)
+send	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.h	8;"	p	line:8	signature:(unsigned char)
+temp	D:\22_8_2012\NAIPUNYA COLLEGE WORKSHOP\sample codes and circuits\basic programs\28_eeprom\program\lcd.c	39;"	l	line:39

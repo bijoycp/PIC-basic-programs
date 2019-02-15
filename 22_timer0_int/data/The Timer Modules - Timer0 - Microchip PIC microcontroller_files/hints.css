@@ -1,0 +1,37 @@
+.hintText {
+	font-family: tahoma, verdana, arial;
+	font-size: 12px;
+	background-color: white;
+	color: #000000;
+	padding: 5px;
+}
+.wrapped table,
+.wrapped td {
+	border: 0;
+	border-collapse: collapse;
+	padding: 0;
+	background-position: 0px;
+}
+
+a.Explain:link{
+	border-bottom: 1px dashed rgb(0, 102, 204);
+	cursor: pointer;
+	text-decoration:none;
+	color:black;
+}
+a.Explain:hover{
+	text-decoration:none;
+	background-color:#B9E1E8;
+}
+a.Explain:visited{
+	border-bottom: 1px dashed rgb(0, 102, 204);
+	cursor: pointer;
+	text-decoration:none;
+	color:black;
+}
+a.Explain:active{
+	border-bottom: 1px dashed rgb(0, 102, 204);
+	cursor: pointer;
+	text-decoration:none;
+	color:black;
+}

@@ -1,0 +1,427 @@
+
+<!-- saved from url=(0052)http://www.pcbheaven.com/picpages/The_Timer_Modules/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"><script src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/ca-pub-9887055930206585.js"></script><script src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/cb=gapi.loaded_0" async=""></script><script type="text/javascript" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/enlargeit.js"></script>
+<script type="text/javascript">
+//More at http://enlargeit.timos-welt.de/english/11/demomachine.php
+enl_ani = 3;
+enl_brdcolor = '#FFFFFF';
+enl_titletxtcol = '#444444';
+enl_ajaxcolor = '#d0d0d0';
+enl_brdsize = 28;
+enl_maxstep = 30;
+enl_speed = 12;
+enl_shadow = 1;
+enl_shadowintens = 20;
+enl_shadowsize = 1;
+enl_center = 0;
+enl_dark = 1;
+enl_darkprct = 20;
+enl_preload = 1;
+enl_drgdrop = 0;
+enl_darksteps = 5;
+enl_keynav = 0;
+enl_wheelnav = 0;
+enl_opaglide = 30;
+enl_minuscur='minuscur.cur';
+enl_brdround = 1;
+//enl_brdbck = 'b_paper.png';
+enl_brdbck = '';
+//enl_buttonurl[0] = 'prev';
+//enl_buttontxt[0] = 'Previous picture [left arrow key]';
+//enl_buttonoff[0] = -216;
+//enl_buttonurl[1] = 'next';
+//enl_buttontxt[1] = 'Next picture [right arrow key]';
+//enl_buttonoff[1] = -234;
+enl_buttonurl[0] = 'close';
+enl_buttontxt[0] = 'Close';
+enl_buttonoff[0] = -0;
+enl_gifpath = 'http://pcbheaven.com/scripts/thumbup/';
+enl_btnact='bact.png';
+enl_btninact='binact.png';
+</script>
+<style type="text/css">
+.thumbnail { border-width: 1px; border-style: solid; border-color: black; }
+</style>
+
+<script>
+function ShowFile(FileName){
+	//loadFragmentNoReturn("../fileview.php?fn="+escape(FileName));
+	loadFragmentNoReturn("../fileview.php?fn="+escape(FileName));
+	window.location="../files/"+FileName;
+}
+
+</script>
+
+
+
+<meta name="description" content="PCB Heaven! Electronic theory, schematic circuits and PIC tutorials">
+<title>The Timer Modules - Timer0 - Microchip PIC microcontroller</title>
+<meta name="RATING" content="General">
+<meta name="REVISIT-AFTER" content="1 Week">
+
+<link rel="alternate" type="application/rss+xml" href="http://pcbheaven.com/rss/rss.xml">
+<link href="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/styles.css" rel="stylesheet" type="text/css">
+<link href="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/pages.css" rel="stylesheet" type="text/css">
+<link href="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/hints.css" rel="stylesheet" type="text/css">
+<link rel="SHORTCUT ICON" href="http://pcbheaven.com/pics/main/main.ico">
+<script src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/javascripts.js"></script>
+<script src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/tigra_hints.js"></script>
+<script src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/myslideshow.js"></script>
+<script type="text/javascript" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/plusone.js" gapi_processed="true"></script>
+
+</head>
+
+<body leftmargin="0" topmargin="0" rightmargin="0" bottommargin="00">
+<noscript>&lt;br&gt;&lt;B&gt;Your browser has JavaScript turned off.&lt;/B&gt;&lt;BR&gt;You will experience a more enjoyable time at this Web site if you turn JavaScript on.&lt;HR&gt;&lt;br&gt;</noscript>
+<div align="right">
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.pcbheaven.com/" class="tos">Home</a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.pcbheaven.com/contact" class="tos">Contact</a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.pcbheaven.com/projectpages/" class="tos">Projects</a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.pcbheaven.com/exppages/" class="tos">Experiments</a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.pcbheaven.com/circuitpages/" class="tos">Circuits</a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.pcbheaven.com/wikipages/" class="tos">Theory</a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.pcbheaven.com/blogpages" class="tos">BLOG</a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.pcbheaven.com/picpages/" class="tos">PIC Tutorials</a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.pcbheaven.com/opendir/" class="tos">Time for Science</a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.pcbheaven.com/rss/rss.xml" class="tos">RSS</a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.pcbheaven.com/m_pages/tos.php" class="tos">Terms of services</a>
+&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.pcbheaven.com/m_pages/prvs.php" class="tos">Privacy policy</a>&nbsp;&nbsp;
+
+</div>
+<table bgcolor="#5884a8" border="0" bordercolor="#111111" cellpadding="0" cellspacing="0" height="76" width="100%">
+	<tbody><tr> 
+		<td colspan="2" height="5"><img border="0" height="4" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/topline.jpg" width="100%"></td>
+	</tr>
+	
+	<tr><td align="center">
+		<table bgcolor="#5884a8" border="0" cellpadding="0" cellspacing="0" height="76" width="960" align="center">
+			<tbody><tr> 
+				<td align="center" bgcolor="#5884a8" height="67"><a href="http://www.pcbheaven.com/"><img border="0" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/topbanner.jpg"></a>&nbsp;&nbsp;&nbsp;
+                <a href="http://www.pcbheaven.com/" class="topmenu"><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/home_ico.png" border="0" height="32" title="PCB Heaven Home page"></a>
+                <a href="http://www.pcbheaven.com/contact" class="topmenu"><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/mail_ico.png" border="0" height="32" title="Contact with me via email"></a>
+                
+				<a href="http://www.pcbheaven.com/forum" class="topmenu"><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/forum_ico.png" border="0" height="32" title="Discussion forum"></a>
+                <a href="http://www.youtube.com/user/pcbheaven?feature=results_main" class="topmenu"><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/youtube.png" border="0" width="32" height="32" title="Watch us on Youtube"></a>
+                <a href="http://www.facebook.com/pcbheaven" class="topmenu"><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/fcb_ico.png" border="0" width="32" height="32" title="Find us on facebook"></a>
+                <a href="http://twitter.com/pcbheaven" class="topmenu"><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/twit_ico.png" border="0" width="32" height="32" title="PCB Heaven chirps on twitter"></a>
+                <a href="http://www.pcbheaven.com/rss/rss.xml" class="topmenu"><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/rss_ico.png" border="0" width="32" height="32" title="Subscribe on our RSS feed"></a>
+                </td></tr>
+			<tr><td align="center">
+				<a href="http://www.pcbheaven.com/" class="topmenu"><img border="0" align="absmiddle" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/home.png">&nbsp;Home</a>
+&nbsp;&nbsp;&nbsp;
+				<a href="http://www.pcbheaven.com/projectpages/" class="topmenu"><img border="0" align="absmiddle" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/wrench.png">&nbsp;Projects</a>&nbsp;&nbsp;&nbsp;				
+				<a href="http://www.pcbheaven.com/exppages/" class="topmenu"><img border="0" align="absmiddle" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/gear.png">&nbsp;Experiments</a>&nbsp;&nbsp;&nbsp;				
+				<a href="http://www.pcbheaven.com/circuitpages/" class="topmenu"><img border="0" align="absmiddle" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/circuit.png">&nbsp;Circuits</a>&nbsp;&nbsp;&nbsp;				
+				<a href="http://www.pcbheaven.com/wikipages/" class="topmenu"><img border="0" align="absmiddle" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/theory.png">&nbsp;Theory</a>&nbsp;&nbsp;&nbsp;				
+				<a href="http://www.pcbheaven.com/blogpages/" class="topmenu"><img border="0" align="absmiddle" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/blog.png">&nbsp;BLOG</a>&nbsp;&nbsp;&nbsp;
+				<a href="http://www.pcbheaven.com/picpages/" class="topmenu"><img border="0" align="absmiddle" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/chip.png">&nbsp;PIC Tutorials</a>&nbsp;&nbsp;&nbsp;
+				<a href="http://www.pcbheaven.com/opendir/" class="topmenu"><img border="0" align="absmiddle" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/science_ico.png">&nbsp;Time for Science</a>&nbsp;&nbsp;&nbsp;
+			
+				
+				</td></tr>
+		</tbody></table>
+		
+	</td></tr>
+	<tr> 
+		<td colspan="2" height="5"><img border="0" height="4" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/bottomline.jpg" width="100%"></td>
+	</tr>
+</tbody></table>
+
+<br>
+<table border="0" cellspacing="0" height="800" width="960" align="center" class="BorderedSimple" cellpadding="12">
+<tbody><tr><td align="left" valign="top">
+<script async="" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/adsbygoogle.js"></script>
+<!-- Image Show 728x90 -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-9887055930206585" data-ad-slot="6344926625" data-adsbygoogle-status="done"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/saved_resource.html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><script>
+function SubmitComment(PageName){
+	var query='txtName='+escape(document.getElementById('txtName').value);
+	query+='&txtEmail='+escape(document.getElementById('txtEmail').value);
+	query+='&txtWebsite='+escape(document.getElementById('txtWebsite').value);
+	
+	if (document.getElementById('chkMailConfirm').checked){
+		query+='&chkMailConfirm=1';
+	}else{
+		query+='&chkMailConfirm=0';
+	}
+	query+='&comments_confirm_ses='+escape(document.getElementById('comments_confirm_ses').value);
+	query+='&comments_confirm_val='+escape(document.getElementById('comments_confirm_val').value);
+	query+='&txtLocation='+escape(document.location.href);
+	query+='&txtTitle='+escape(document.title);
+	query+='&txtPageName='+PageName;
+	query+='&txtComments='+escape(document.getElementById('txtComments').value);
+	
+	document.getElementById('frmCommentThisPage').innerHTML='<center><img src="/pics/indicator.gif"></center>';
+	postFragmentinnerHTML('/scripts/comments_actions.php',query,'frmCommentThisPage');
+
+}
+
+function ReplyToUser(UserName){
+	var obj=document.getElementById('txtComments');
+	obj.value='@'+UserName+' '+obj.value;
+}
+</script>
+
+
+<br><br><a class="Title" href="http://www.pcbheaven.com/picpages/The_Timer_Modules/">The Timer Modules - Timer0</a><hr><p class="blog">Until now, we have cover the basic knowledge of PIC programming. We will start analyzing the built-in modules of the PICs. At this point, i should remind that this tutorial is based on the PIC 16F88, a very powerful 8-bit PIC. For the 8-bit PIC family the modules have more or less the same functionality. As you understand, this tutorial will not work for 16 or 32-bit PICs. I will start with the TIMER modules. These modules are by far the most important to learn.</p>
+
+
+<br><br><br>
+<font class="SubTitle">The Timer0 Module</font><hr>
+
+<p class="blog">The PIC 16F88 has 3 built in timers. The first one is the Timer0 module. This is an 8-bit counter, which means that it can count from 0 to 255, and then it will loop back to 0. There are two sources that the Timer0 can increase the count. Each PIC module, can be controlled by bit switches in various registers. The Timer0 module uses some bits from the OPTION_REG register for setting it up.</p>
+
+<br><br><br>
+<font class="SubTitle">Setting up and accessing the Timer0 module</font><hr>
+
+<p class="blog">The Timer0 module has a dedicated register that can be accessed for read and write operations. This register can be accessed from BANK 0 and BANK 2, and is named "<b>TMR0</b>". A direct read (MOVF TMR0,w) will transfer the value of the Timer0 counter directly to the W register, while a direct write (MOVWF TMR0) will transfer the content of the W register to the Timer0 counter.</p>
+
+<p class="blog">The operation of the Timer0 module can be determined by specific bits of the OPTION_REG register. Let's see these bits one by one:</p>
+
+<br><br><br>
+<font class="SubTitle3">OPTION_REG register BIT &lt;5&gt; (T0CS):</font><br>
+
+<p class="blog">This is the <b>"TMR0 Clock Source Select bit"</b>. The value of this bit will determine if the TMR0 register will be increased on every internal instruction cycle of the PIC (in other words once every 4 clock pulses) (<a href="http://pcbheaven.com/picpages/Instruction_Cycle_Duration_and_Programmable_Delays/" target="_blank">learn more about the instruction cycle here</a>), or on every pulse on the TOCKI pin input. The possible values for the TOCS bit are:</p>
+
+<ul class="Normal">
+<li class="Normal"><b>0:</b> The increament is done on every internal instruction cycle</li>
+<li class="Normal"><b>1:</b> The increament is done on every pulse on the TOCKI pin input of the PIC </li>
+</ul>
+
+<br><br>
+<font class="SubTitle3">OPTION_REG register BIT &lt;4&gt; (T0SE):</font><br>
+
+<p class="blog">This is the <b>"TMR0 Source Edge Select bit"</b>. This bit has an effect only if the T0CS bit (above) is 1, in other words if the TMR0 register increases with external pulses on the TOCKI pin. The increament is done at the EDGE of each pulse. The value of the TOSE bit will determine if the increament will be done on the POSITIVE GOING transition, or on the NEGATIVE GOING transition of the pulse. The values that this bit can get are:</p>
+
+<ul class="Normal">
+<li class="Normal"><b>0:</b> The increament is done on the LOW to HIGH transition of the pulse</li>
+<li class="Normal"><b>1:</b> The increament is done on the HIGH to LOW transition of the pulse </li>
+</ul>
+
+
+<br><br>
+<font class="SubTitle3">OPTION_REG register BIT &lt;3&gt; (PSA):</font><br>
+
+<p class="blog">This is the <b>"Prescaler Assignment bit"</b>. The prescaler is another module of the PIC. The prescaler divides the input counts before they arrive at the TMR0 register. The prescaler can divide both the pulses from the TOCKI pin (when TOCS=1) as well as the counts from the internal instruction cycles (when TOCS-0). The PSA bit can have the following values:</p>
+
+<ul class="Normal">
+<li class="Normal"><b>0:</b> The PSA is assigned to the Timer0 module and the counts are divided before they reach the TMR0 register</li>
+<li class="Normal"><b>1:</b> The PSA is assigned to the Watchdog timer (another module of the PIC) and the counts will arrive directly to the TMR0 register</li>
+</ul>
+
+<br><br>
+<font class="SubTitle3">OPTION_REG register BIT &lt;2:0&gt; (PS):</font><br>
+
+<p class="blog">These 3 bits are the <b>"Prescaler Rate Select bits"</b>. These bits have an effect on the prescaler division rate all the time, but they have an effect on the Timer0 module <b>ONLY if the prescaler is assigned to the Timer0 module</b> (when PSA=0). If the prescaler is assigned to the Timer0 module, then these 3 bits will determine the division rate. If for example the division rate is 64, then the TMR0 module will increase it's value by one, after 64 counts. The values that these bits can get are:</p>
+
+<ul class="Normal">
+<li class="Normal"><b>000:</b> 1/2 division</li>
+<li class="Normal"><b>001:</b> 1/4 division</li>
+<li class="Normal"><b>010:</b> 1/8 division</li>
+<li class="Normal"><b>011:</b> 1/16 division</li>
+<li class="Normal"><b>100:</b> 1/32 division</li>
+<li class="Normal"><b>101:</b> 1/64 division</li>
+<li class="Normal"><b>110:</b> 1/128 division</li>
+<li class="Normal"><b>111:</b> 1/256 division</li>
+</ul>
+
+
+
+<br><br><br>
+<font class="SubTitle">The Timer0 Interrupt</font><hr>
+
+<p class="blog">The Timer0 module has an 8-bit register for the counts, the TMR0 register located in BANK0 and BANK2. This means that it can count up to 255. If the TMR0 value is 255 (0xFF) and it is increased once more, then the TMR0 register will become 0 (0x00) and the <b>TMR0 interrupt</b> shall be raised. The TMR0IE interrupt can be controlled by the <b>INTCON</b> register bit 5 (TMR0IE - TMR0 Interrupt Enabled). When the TMR0 Interrupt is raised, the INTCON bit 2 (TMR0IF - TMR0 Interrupt Flag) is raised to indicate that the TMR0 interrupt is occurred. The TMR0IF must be cleared in software (BCF INTCON,TMR0IF) for the TMR0 interrupt to be re-enabled. <a href="http://pcbheaven.com/picpages/The_Interrupts/" target="_blank">More info about the PIC Interrupts can be found in this link.</a></p>
+
+
+<br><br><br>
+<font class="SubTitle">Examples with the Timer0 Module</font><hr>
+
+<p class="blog">For the sake of understanding, find below some examples on how to setup the TMR0 module.</p>
+
+<br><br>
+<font class="SubTitle3">Example 1 - TMR0 increasing on every LOW to HIGH transition on TOCKI pin</font><br>
+
+<br><br>
+<div class="CodeScroll" style="height:100px"><pre>          BANK1                  ; Select Bank 1
+          BSF OPTION_REG,TOCS    ; Transition on T0CKI pin
+          BCF OPTION_REG,T0SE    ; Increment on low-to-high transition on T0CKI pin
+          BSF OPTION_REG,PSA     ; Prescaler is assigned to the Watchdog
+          BANK0                  ; Select Bank 0
+          
+</pre></div>
+<br><br>
+
+
+<br><br>
+<font class="SubTitle3">Example 2 - TMR0 increasing once every 128 internal instruction cycles</font><br>
+
+<br><br>
+<div class="CodeScroll" style="height:130px"><pre>          BANK1                  ; Select Bank 1
+          BCF OPTION_REG,TOCS    ; Transition on T0CKI pin
+          BCF OPTION_REG,PSA     ; Prescaler is assigned to the Watchdog
+          BSF OPTION_REG,2       ;
+          BSF OPTION_REG,1       ; 
+          BCF OPTION_REG,0       ; PS=110 = 1/128 division rate
+          BANK0                  ; Select Bank 0
+          
+</pre></div>
+<br><br>
+
+<br><br>
+<font class="SubTitle3">Example 3 - Read - Add 0x10 and Write the TMR0 register</font><br>
+
+<br><br>
+<div class="CodeScroll" style="height:80px"><pre>          BANK0                  ; Select Bank 0
+          MOVF TMR0,w            ; READ TMR0
+          ADDLW 0x10             ; Add 0x10
+          MOVWF TMR0,w           ; WRITE TMR0          
+</pre></div>
+<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><hr><br><script async="" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/adsbygoogle.js"></script>
+<!-- Image Show 728x90 -->
+<ins class="adsbygoogle" style="display:inline-block;width:728px;height:90px" data-ad-client="ca-pub-9887055930206585" data-ad-slot="6344926625" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:728px;background-color:transparent"><iframe width="728" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/saved_resource(1).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script><br><br><br><font class="SubTitle">Confirm your knowledge</font><hr><br>There is an online test to check your knowledge on this page. You may reveal the test with the following button:<br><br><div id="TestDiv"><input type="button" value="Reveal the test" onclick="loadFragmentinnerHTML(&#39;../../scripts/online_tests/reveal_test.php?dbn=picpages_pages&amp;pn=tmrmodules&#39;,&#39;TestDiv&#39;)"></div><script>Ques=new Array();Res=new Array();Ques[1]=1;Res[1]=new Array();Res[1][1]=0;Res[1][2]=0;Res[1][3]=1;Res[1][4]=0;Ques[2]=2;Res[2]=new Array();Res[2][1]=0;Res[2][2]=0;Res[2][3]=1;Res[2][4]=1;Ques[3]=3;Res[3]=new Array();Res[3][1]=0;Res[3][2]=0;Res[3][3]=0;Res[3][4]=1;Ques[4]=4;Res[4]=new Array();Res[4][1]=1;Res[4][2]=0;Res[4][3]=0;Res[4][4]=0;Ques[5]=5;Res[5]=new Array();Res[5][1]=1;Res[5][2]=0;Res[5][3]=0;Res[5][4]=0;Ques[6]=6;Res[6]=new Array();Res[6][1]=0;Res[6][2]=0;Res[6][3]=0;Res[6][4]=1;Ques[7]=7;Res[7]=new Array();Res[7][1]=0;Res[7][2]=0;Res[7][3]=1;Res[7][4]=1;QCount=7;</script><br><br><br><hr><br><script>
+function SkipToPage(){
+
+}
+</script>
+
+<div align="center">
+<a href="http://www.pcbheaven.com/picpages/Instruction_Cycle_Duration_and_Programmable_Delays"><img align="absmiddle" title="previous page" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/DartLeft.gif" border="0" onmouseover="this.src=&#39;/pics/DartLeftOver.gif&#39;" onmouseout="this.src=&#39;/pics/DartLeft.gif&#39;"></a> Previous page ---- Next page <a href="http://www.pcbheaven.com/picpages/The_Timer_Modules_Timer1"><img align="absmiddle" title="next page" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/DartRight.gif" border="0" onmouseover="this.src=&#39;/pics/DartRightOver.gif&#39;" onmouseout="this.src=&#39;/pics/DartRight.gif&#39;"></a>
+<br><br>
+<script>
+function ChangeToSelectedPage(){
+	var SVal=document.getElementById('selDirectPageSelection').value;
+	
+	if (!SVal==""){
+		window.location=SVal;
+	}
+}
+</script>
+
+<select id="selDirectPageSelection" onchange="ChangeToSelectedPage();"><option value="">Basics</option><option value="../PIC_Programming-What_Will_You_Need/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;What will you need</option><option value="../Choosing_the_right_PIC/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Choosing the right PIC</option><option value="">The MPLAB</option><option value="../MPLAB-Environment/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Getting familiar with the MPLAB environment</option><option value="../MPLAB-Starting_a_new_project/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creating a new project</option><option value="../MPLAB-Open_and_closing_projects/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Open and close projects</option><option value="../MPLAB-Creating_New_Files/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creating new files and including them in the project</option><option value="../Your_very_first_assembly_program/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Your very first assembly program</option><option value="../Compile_a_program_and_transfer_to_the_PIC/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Compile a program and transfer to the PIC</option><option value="">Section 1: Beginner's theory</option><option value="">Memory Organization</option><option value="../The_Data_Memory_Organization/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Data Memory Organization</option><option value="../The_Program_Memory_Organization/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Program Memory Organization</option><option value="">The instructions</option><option value="../General_knowledge_about_instructions/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;General knowledge about instructions</option><option value="../Value_Loading_Instructions/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Value Loading Instructions</option><option value="../Program_Flow_Instructions/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Program Flow Instructions</option><option value="../Mathematic_Instructions/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mathematic Instructions</option><option value="../Logic_Function_Instructions/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Logic Function Instructions</option><option value="../Bit_Orientated_Instructions/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bit Orientated Instructions</option><option value="../Byte_Orientated_Instructions/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Byte Orientated Instructions</option><option value="../Miscellaneous_Instructions/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Miscellaneous Instructions</option><option value="">The Basic Special Function Registers</option><option value="../The_Status_Register/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Status Register</option><option value="../The_Option_Reg_Register/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Option_Reg Register</option><option value="../The_TRIS_and_PORT_registers/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The TRIS and PORT registers</option><option value="">Beginner's PIC Tutorials</option><option value="../How_to_use_our_PIC_Tutorials/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;How to use our PIC Tutorials</option><option value="../A_Pushbutton_turning_an_LED_on_and_off/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A Pushbutton turning an LED on and off</option><option value="../A_Simple_LED_Flasher/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A Simple LED Flasher</option><option value="../Interfacing_Multiple_Switches/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interfacing Multiple Switches - The internal Pull-Up resistors</option><option value="../LED_Sequencer/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;An LED Sequencer</option><option value="../Interface_a_Single_7seg_Digit/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interface a Single 7seg Digit</option><option value="../Interface_Multiple_7seg_Digits/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Interface Multiple 7seg Digits</option><option value="../A_3-digits_Decimal_Counter/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A 3-digits Decimal Counter</option><option value="../A_Clever_Button/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A Clever Button</option><option value="">Section 2: Intermediate theory</option><option value="../Instruction_Cycle_Duration_and_Programmable_Delays/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instruction Cycle Duration and Calculated Delays</option><option value="" selected="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Timer Modules - Timer0</option><option value="../The_Timer_Modules_Timer1/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Timer Modules - Timer1</option><option value="../The_Timer_Modules_Timer2/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;The Timer Modules-Timer2</option></select><br><br>
+<a href="http://www.pcbheaven.com/picpages/">Go back to the book contents</a><br><br>
+<a href="http://pcbheaven.com/forum/index.php/board,29.0.html">Go to the discussion forum of this book</a><br><br>
+</div>
+
+
+<hr>
+
+<br><br><br>
+
+<table border="0" width="100"><tbody><tr><td>&nbsp;</td></tr></tbody></table><br>
+<a href="javascript:" class="title">Comments</a><hr><br><table class="HelpYesNo" cellpadding="8" width="100%" height="10"><tbody><tr><td align="left" valign="middle" id="cellYesNoPoll"><form name="frmCommentThisPage" id="frmCommentThisPage">
+<input class="formtexts" type="text" name="txtName" value="" id="txtName" style="width:250px">&nbsp;&nbsp;Name<br><br><input class="formtexts" type="text" name="txtEmail" value="" id="txtEmail" style="width:250px">&nbsp;&nbsp;Email (shall not be published)<br><br><input class="formtexts" type="text" name="txtWebsite" value="" id="txtWebsite" style="width:250px">&nbsp;&nbsp;Website<br><br><input type="checkbox" name="chkMailConfirm" value="1" id="chkMailConfirm"> Notify me of new posts via email<br><br><br><strong>Write your comments below:</strong><br><font style="color:#CC0000"><b>BEFORE you post a comment:</b></font>You are welcome to comment for corrections and suggestions on this page. But if you have questions <a href="http://www.pcbheaven.com/forum">please use the <b>forum</b></a> instead to post it. Thank you.<br><br><textarea name="txtComments" id="txtComments" style="width:600px;height:180px"></textarea><br><img align="absmiddle" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/createconfimage.php">&nbsp;<input type="hidden" name="comments_confirm_ses" id="comments_confirm_ses" value="258dece6bb373ca8"><input name="comments_confirm_val" id="comments_confirm_val" type="text" style="width:80px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" name="txtSubmit" value="Submit your comment" onclick="SubmitComment(&#39;tmrmodules&#39;);"></form></td></tr></tbody></table><br><table class="HelpYesNo" cellpadding="8" width="100%" height="10"><tbody><tr><td align="left" valign="middle" id="cellYesNoPoll">No comment yet...<br><br><strong><font color="#810002">Be the first to comment on this page!</font></strong></td></tr></tbody></table>
+
+<table border="0" width="100"><tbody><tr><td>&nbsp;</td></tr></tbody></table>
+
+<br><br><br><br><br>
+
+
+<div align="center">
+<hr><font style="color:#A90003;font-size:13"><strong>No part of this publication may be reproduced, stored in a retrieval system or transmitted in any form or by any means, electronic, mechanical, photocopying, recording, scanning or otherwise without the prior written permission of the author.</strong></font><strong><br><br>
+Read the <a href="http://pcbheaven.com/forum/index.php/topic,643.0.html">Disclaimer</a></strong>
+<hr>
+<br>
+<div align="center">
+All trademarks used are properties of their respective owners.<br>
+Copyright © 2007-2009 Lazaridis Giorgos.<br>
+All rights reserved. <br>
+</div>
+<br>
+<hr>
+
+</div></td><td width="180" style="border-style:solid;border-left-width:1px;border-right-width:0px;border-top-width:0px;border-bottom-width:0px;" valign="top"><script type="text/javascript">var GB_ROOT_DIR = "http://pcbheaven.com/scripts/greybox/";</script>
+<script type="text/javascript" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/AJS.js"></script>
+<script type="text/javascript" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/gb_scripts.js"></script>
+<link href="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/gb_styles.css" rel="stylesheet" type="text/css">
+
+<img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/hlp_thumb.gif"><br>
+<!--<a href="javascript:" onClick="GB_showCenter('Feel like helping???!', '/m_pages/help.php?h=va',250,500);"><img src="/pics/hlp/hlp_va.png" border="0"></a><br>-->
+<a href="javascript:" onclick="GB_showCenter(&#39;Feel like helping???!&#39;, &#39;/m_pages/help.php?h=sc&#39;,250,500);"><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/hlp_sc.png" border="0"></a><br>
+<a href="javascript:" onclick="GB_showCenter(&#39;Feel like helping???!&#39;, &#39;/m_pages/help.php?h=pr&#39;,250,500);"><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/hlp_pr.png" border="0"></a><br>
+<table style="border-style:solid;border-width:1px;" width="100%" border="0" cellpadding="10" cellspacing="0" background="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/back1.gif"><tbody><tr><td align="left">
+<form action="http://pcbheaven.com/searchresults.php" id="cse-search-box"><div align="center"><input type="hidden" name="cx" id="cx" value="partner-pub-9887055930206585:9l3xtf-42op"><input type="hidden" name="cof" id="cof" value="FORID:9"><input type="hidden" name="ie" value="ISO-8859-1"><input onkeypress="CheckEnter(event)" type="text" style="width:160px" id="q" name="q"><br>
+<input type="submit" value="Search"></div></form></td></tr></tbody></table><br><table class="BorderedPages" width="100%"><tbody><tr><td bgcolor="white" id="SunscriptionRow" align="center">
+
+<img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/flame.png" width="16" heght="16" border="0">&nbsp;<strong><font style="color:#970000" class="subtitle">H</font><font style="color:#D10000" class="subtitle">O</font><font style="color:#D16900" class="subtitle">T</font> in <font style="color:#328127" class="subtitle"><em>h</em></font>eaven!</strong>
+<br><br>
+
+<a href="http://twitter.com/pcbheaven"><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/twitter.jpg" border="0"></a>
+
+</td></tr>
+</tbody></table>
+
+
+
+<br>
+
+
+<table class="BorderedPages" width="100%"><tbody><tr><td>
+<li class="MiniContents"><a href="http://pcbheaven.com/forum/index.php/topic,643.0.html"><b>Disclaimer</b></a></li>
+<li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/" style="color:black;"><u>Book Contents</u></a></li>
+<li class="MiniContents"><a href="http://pcbheaven.com/forum/index.php/board,29.0.html" style="color:black;"><u>Discussion forum</u></a></li>
+</td></tr></tbody></table>
+<br>
+<table class="BorderedPages" width="100%"><tbody><tr><td>
+<div style="height: 300px;overflow: auto">
+<!-- <div style="height: 300px;overflow: auto;border-style:solid;border-width:1px;border-right-width:0px;border-color:#7C7B7D"> -->
+
+	
+<li class="MiniContentsHeader"><a href="http://www.pcbheaven.com/picpages/The_Timer_Modules/" class="MiniBookContents_L1_Inactive"><b>Basics</b></a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/PIC_Programming-What_Will_You_Need/" class="MiniBookContents_L2">What will you need</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/Choosing_the_right_PIC/" class="MiniBookContents_L2">Choosing the right PIC</a></li><li class="MiniContentsHeader"><a href="http://www.pcbheaven.com/picpages/The_Timer_Modules/" class="MiniBookContents_L1_Inactive"><b>The MPLAB</b></a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/MPLAB-Environment/" class="MiniBookContents_L2">Getting familiar with the MPLAB environment</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/MPLAB-Starting_a_new_project/" class="MiniBookContents_L2">Creating a new project</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/MPLAB-Open_and_closing_projects/" class="MiniBookContents_L2">Open and close projects</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/MPLAB-Creating_New_Files/" class="MiniBookContents_L2">Creating new files and including them in the project</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/Your_very_first_assembly_program/" class="MiniBookContents_L2">Your very first assembly program</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/Compile_a_program_and_transfer_to_the_PIC/" class="MiniBookContents_L2">Compile a program and transfer to the PIC</a></li><li class="MiniContentsHeader"><a href="http://www.pcbheaven.com/picpages/The_Timer_Modules/" class="MiniBookContents_L1_Inactive"><b>Section 1: Beginner's theory</b></a></li><li class="MiniContentsHeader"><a href="http://www.pcbheaven.com/picpages/The_Timer_Modules/" class="MiniBookContents_L1_Inactive"><b>Memory Organization</b></a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/The_Data_Memory_Organization/" class="MiniBookContents_L2">The Data Memory Organization</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/The_Program_Memory_Organization/" class="MiniBookContents_L2">The Program Memory Organization</a></li><li class="MiniContentsHeader"><a href="http://www.pcbheaven.com/picpages/The_Timer_Modules/" class="MiniBookContents_L1_Inactive"><b>The instructions</b></a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/General_knowledge_about_instructions/" class="MiniBookContents_L2">General knowledge about instructions</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/Value_Loading_Instructions/" class="MiniBookContents_L2">Value Loading Instructions</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/Program_Flow_Instructions/" class="MiniBookContents_L2">Program Flow Instructions</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/Mathematic_Instructions/" class="MiniBookContents_L2">Mathematic Instructions</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/Logic_Function_Instructions/" class="MiniBookContents_L2">Logic Function Instructions</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/Bit_Orientated_Instructions/" class="MiniBookContents_L2">Bit Orientated Instructions</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/Byte_Orientated_Instructions/" class="MiniBookContents_L2">Byte Orientated Instructions</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/Miscellaneous_Instructions/" class="MiniBookContents_L2">Miscellaneous Instructions</a></li><li class="MiniContentsHeader"><a href="http://www.pcbheaven.com/picpages/The_Timer_Modules/" class="MiniBookContents_L1_Inactive"><b>The Basic Special Function Registers</b></a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/The_Status_Register/" class="MiniBookContents_L2">The Status Register</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/The_Option_Reg_Register/" class="MiniBookContents_L2">The Option_Reg Register</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/The_TRIS_and_PORT_registers/" class="MiniBookContents_L2">The TRIS and PORT registers</a></li><li class="MiniContentsHeader"><a href="http://www.pcbheaven.com/picpages/The_Timer_Modules/" class="MiniBookContents_L1_Inactive"><b>Beginner's PIC Tutorials</b></a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/How_to_use_our_PIC_Tutorials/" class="MiniBookContents_L2">How to use our PIC Tutorials</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/A_Pushbutton_turning_an_LED_on_and_off/" class="MiniBookContents_L2">A Pushbutton turning an LED on and off</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/A_Simple_LED_Flasher/" class="MiniBookContents_L2">A Simple LED Flasher</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/Interfacing_Multiple_Switches/" class="MiniBookContents_L2">Interfacing Multiple Switches - The internal Pull-Up resistors</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/LED_Sequencer/" class="MiniBookContents_L2">An LED Sequencer</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/Interface_a_Single_7seg_Digit/" class="MiniBookContents_L2">Interface a Single 7seg Digit</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/Interface_Multiple_7seg_Digits/" class="MiniBookContents_L2">Interface Multiple 7seg Digits</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/A_3-digits_Decimal_Counter/" class="MiniBookContents_L2">A 3-digits Decimal Counter</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/A_Clever_Button/" class="MiniBookContents_L2">A Clever Button</a></li><li class="MiniContentsHeader"><a href="http://www.pcbheaven.com/picpages/The_Timer_Modules/" class="MiniBookContents_L1_Inactive"><b>Section 2: Intermediate theory</b></a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/Instruction_Cycle_Duration_and_Programmable_Delays/" class="MiniBookContents_L2">Instruction Cycle Duration and Calculated Delays</a></li><li class="MiniContents"><a href="javascript:" class="MiniBookContents_L2" style="color:#740002">The Timer Modules - Timer0</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/The_Timer_Modules_Timer1/" class="MiniBookContents_L2">The Timer Modules - Timer1</a></li><li class="MiniContents"><a href="http://www.pcbheaven.com/picpages/The_Timer_Modules_Timer2/" class="MiniBookContents_L2">The Timer Modules-Timer2</a></li></div>
+</td></tr></tbody></table>
+<br>
+<table width="180" cellpadding="0" cellspacing="0">
+<tbody><tr><td><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/sm_top.png"></td></tr>
+<tr><td><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/sm_mid.png" height="10" width="180"></td></tr>
+<tr><td><a href="http://www.pcbheaven.com/circuitpages"><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/sm_mnu_circuits.png" border="0"></a></td></tr>
+<tr><td><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/sm_mid.png" height="10" width="180"></td></tr>
+<tr><td><a href="http://www.pcbheaven.com/exppages/"><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/sm_mnu_experiments.png" border="0"></a></td></tr>
+<tr><td><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/sm_mid.png" height="10" width="180"></td></tr>
+<tr><td><a href="http://www.pcbheaven.com/projectpages/"><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/sm_mnu_projects.png" border="0"></a></td></tr>
+<tr><td><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/sm_mid.png" height="10" width="180"></td></tr>
+<tr><td><a href="http://www.pcbheaven.com/wikipages/"><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/sm_mnu_theory.png" border="0"></a></td></tr>
+<tr><td><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/sm_mid.png" height="10" width="180"></td></tr>
+<tr><td><a href="http://www.pcbheaven.com/opendir/"><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/sm_mnu_hacksnmods.png" border="0"></a></td></tr>
+<tr><td><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/sm_mid.png" height="10" width="180"></td></tr>
+<tr><td><a href="http://www.pcbheaven.com/blogpages/"><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/sm_mnu_blog.png" border="0"></a></td></tr>
+<tr><td><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/sm_mid.png" height="10" width="180"></td></tr>
+<tr><td><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/sm_bottom.png"></td></tr>
+</tbody></table><br><br><table class="BorderedPages" width="100%"><tbody><tr><td bgcolor="white" id="SunscriptionRow" align="center">
+
+
+<img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/news_icon.jpg" border="0"><strong><font style="color:#FF8C00" class="subtitle">NEW</font> in <font style="color:#328127" class="subtitle"><em>h</em></font>eaven!</strong>
+<br><br>
+
+
+<center><a href="http://www.pcbheaven.com/userpages/AC_electric_motor_working_principle" target="_self"><img src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/AC_electric_motor_working_principle_1.jpg" width="153" align="top" border="1" hspace="5&lt;br"><br><br>New Theory: <b>AC electric motor working principle</b></a></center></td></tr>
+</tbody></table>
+
+<br>
+
+<br><div align="center"><script async="" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/adsbygoogle.js"></script>
+<!-- Main 160x600 -->
+<ins class="adsbygoogle" style="display:inline-block;width:160px;height:600px" data-ad-client="ca-pub-9887055930206585" data-ad-slot="1700680024" data-adsbygoogle-status="done"><ins id="aswift_2_expand" style="display:inline-table;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><ins id="aswift_2_anchor" style="display:block;border:none;height:600px;margin:0;padding:0;position:relative;visibility:visible;width:160px;background-color:transparent"><iframe width="160" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_2" name="aswift_2" style="left:0;position:absolute;top:0;" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/saved_resource(2).html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<br><br>
+<script id="mNCC" language="javascript">  medianet_width='160';  medianet_height= '600';  medianet_crid='280587182';  </script>  <script id="mNSC" src="./The Timer Modules - Timer0 - Microchip PIC microcontroller_files/nmedianet.js" language="javascript"></script></div></td></tr></tbody></table></body></html>
