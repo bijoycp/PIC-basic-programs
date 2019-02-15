@@ -1,0 +1,14 @@
+_LCD_STROBE: CODE, 1244 0 16
+_lcd_puts: CODE, 1293 0 43
+_main: CODE, 1816 0 100
+_DelayMs: CODE, 1260 0 33
+___lwdiv: CODE, 1660 0 78
+_lcd_goto: CODE, 1587 0 73
+_init_adc: CODE, 1222 0 11
+___lwmod: CODE, 1448 0 68
+_read_adc: CODE, 1384 0 64
+_itoa: CODE, 1336 0 48
+_send: CODE, 1516 0 71
+_utoa: CODE, 1916 0 132
+_lcd_init: CODE, 1738 0 78
+Total: 815
