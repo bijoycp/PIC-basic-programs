@@ -1,0 +1,21 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+DelayMs	E:\WAYANAD\PROGRAMS\10  LDR and RELAY\delay.c	11;"	f	line:11	signature:(unsigned char cnt)
+DelayMs	E:\WAYANAD\PROGRAMS\10  LDR and RELAY\delay.h	50;"	p	line:50	signature:(unsigned char)
+DelayUs::(x){unsignedchar_dcnt;	E:\WAYANAD\PROGRAMS\10  LDR and RELAY\delay.h	41;"	d	line:41
+DelayUs::(x){unsignedchar_dcnt;	E:\WAYANAD\PROGRAMS\10  LDR and RELAY\delay.h	47;"	d	line:47
+KHZ::*1	E:\WAYANAD\PROGRAMS\10  LDR and RELAY\delay.h	34;"	d	line:34
+LDR::RD0	E:\WAYANAD\PROGRAMS\10  LDR and RELAY\main.c	4;"	d	line:4	file:
+MHZ::*1000L	E:\WAYANAD\PROGRAMS\10  LDR and RELAY\delay.h	33;"	d	line:33
+XTAL_FREQ::4MHZ	E:\WAYANAD\PROGRAMS\10  LDR and RELAY\delay.h	30;"	d	line:30
+delay	E:\WAYANAD\PROGRAMS\10  LDR and RELAY\delay.c	30;"	f	line:30	signature:(unsigned int dly)
+delay	E:\WAYANAD\PROGRAMS\10  LDR and RELAY\delay.h	51;"	p	line:51	signature:(unsigned int dly)
+dly1	E:\WAYANAD\PROGRAMS\10  LDR and RELAY\delay.c	32;"	l	line:32
+i	E:\WAYANAD\PROGRAMS\10  LDR and RELAY\delay.c	20;"	l	line:20
+main	E:\WAYANAD\PROGRAMS\10  LDR and RELAY\main.c	6;"	f	line:6
