@@ -1,0 +1,910 @@
+
+
+HI-TECH Software PIC LITE Macro Assembler V9.82 build 9453 
+                                                                                               Wed Aug 03 10:10:07 2016
+
+HI-TECH Software Omniscient Code Generator (Lite mode) build 9453
+     1  0000                     opt subtitle "HI-TECH Software Omniscient Code Generator (Lite mode) build 9453"
+     2                           
+     3                           opt pagewidth 120
+     4                           
+     5                           	opt lm
+     6                           
+     7                           	processor	16F877A
+     8                           clrc	macro
+     9                           	bcf	3,0
+    10  0000                     	endm
+    11                           clrz	macro
+    12                           	bcf	3,2
+    13  0000                     	endm
+    14                           setc	macro
+    15                           	bsf	3,0
+    16  0000                     	endm
+    17                           setz	macro
+    18                           	bsf	3,2
+    19  0000                     	endm
+    20                           skipc	macro
+    21                           	btfss	3,0
+    22  0000                     	endm
+    23                           skipz	macro
+    24                           	btfss	3,2
+    25  0000                     	endm
+    26                           skipnc	macro
+    27                           	btfsc	3,0
+    28  0000                     	endm
+    29                           skipnz	macro
+    30                           	btfsc	3,2
+    31  0000                     	endm
+    32  0000                     indf	equ	0
+    33  0000                     indf0	equ	0
+    34  0002                     pc	equ	2
+    35  0002                     pcl	equ	2
+    36  0003                     status	equ	3
+    37  0004                     fsr	equ	4
+    38  0004                     fsr0	equ	4
+    39  0001                     c	equ	1
+    40  0000                     z	equ	0
+    41  000A                     pclath	equ	10
+    42                           	FNCALL	_main,_interrupt_ini
+    43                           	FNCALL	_main,_DelayMs
+    44                           	FNROOT	_main
+    45                           	FNCALL	_abc,i1_DelayMs
+    46                           	FNCALL	intlevel1,_abc
+    47                           	global	intlevel1
+    48                           	FNROOT	intlevel1
+    49                           	global	_PORTB
+    50                           psect	text139,local,class=CODE,delta=2
+    51                           global __ptext139
+    52  0000                     __ptext139:
+    53  0006                     _PORTB	set	6
+    54                           	global	_PORTD
+    55  0008                     _PORTD	set	8
+    56                           	global	_CARRY
+    57  0018                     _CARRY	set	24
+    58                           	global	_GIE
+    59  005F                     _GIE	set	95
+    60                           	global	_INTE
+    61  005C                     _INTE	set	92
+    62                           	global	_INTF
+    63  0059                     _INTF	set	89
+    64                           	global	_RD0
+    65  0040                     _RD0	set	64
+    66                           	global	_RD1
+    67  0041                     _RD1	set	65
+    68                           	global	_TRISB
+    69  0086                     _TRISB	set	134
+    70                           	global	_TRISD
+    71  0088                     _TRISD	set	136
+    72                           	global	_EEADR
+    73  010D                     _EEADR	set	269
+    74                           	global	_EEDATA
+    75  010C                     _EEDATA	set	268
+    76                           	global	_EECON1
+    77  018C                     _EECON1	set	396
+    78                           	global	_EECON2
+    79  018D                     _EECON2	set	397
+    80                           	global	_RD
+    81  0C60                     _RD	set	3168
+    82                           	global	_WR
+    83  0C61                     _WR	set	3169
+    84                           	global	_WREN
+    85  0C62                     _WREN	set	3170
+    86                           	file	"FRR.as"
+    87                           	line	#
+    88                           psect cinit,class=CODE,delta=2
+    89                           global start_initialization
+    90  00A0                     start_initialization:
+    91                           
+    92                           psect cinit,class=CODE,delta=2
+    93                           global end_of_initialization
+    94                           
+    95                           ;End of C runtime variable initialization code
+    96                           
+    97  00A0                     end_of_initialization:
+    98  00A0  0183               clrf status
+    99  00A1  120A  118A  2815   ljmp _main	;jump to C main() function
+   100                           psect	cstackCOMMON,class=COMMON,space=1
+   101                           global __pcstackCOMMON
+   102  0070                     __pcstackCOMMON:
+   103                           	global	?_interrupt_ini
+   104  0070                     ?_interrupt_ini:	; 0 bytes @ 0x0
+   105                           	global	?_DelayMs
+   106  0070                     ?_DelayMs:	; 0 bytes @ 0x0
+   107                           	global	?_main
+   108  0070                     ?_main:	; 0 bytes @ 0x0
+   109                           	global	?_abc
+   110  0070                     ?_abc:	; 0 bytes @ 0x0
+   111                           	global	?i1_DelayMs
+   112  0070                     ?i1_DelayMs:	; 0 bytes @ 0x0
+   113                           	global	??i1_DelayMs
+   114  0070                     ??i1_DelayMs:	; 0 bytes @ 0x0
+   115  0070                     	ds	1
+   116                           	global	i1DelayMs@cnt
+   117  0071                     i1DelayMs@cnt:	; 1 bytes @ 0x1
+   118  0071                     	ds	1
+   119                           	global	i1DelayMs@i
+   120  0072                     i1DelayMs@i:	; 1 bytes @ 0x2
+   121  0072                     	ds	1
+   122                           	global	i1DelayMs@_dcnt
+   123  0073                     i1DelayMs@_dcnt:	; 1 bytes @ 0x3
+   124  0073                     	ds	1
+   125                           	global	??_abc
+   126  0074                     ??_abc:	; 0 bytes @ 0x4
+   127  0074                     	ds	4
+   128                           psect	cstackBANK0,class=BANK0,space=1
+   129                           global __pcstackBANK0
+   130  0020                     __pcstackBANK0:
+   131                           	global	??_interrupt_ini
+   132  0020                     ??_interrupt_ini:	; 0 bytes @ 0x0
+   133                           	global	??_DelayMs
+   134  0020                     ??_DelayMs:	; 0 bytes @ 0x0
+   135  0020                     	ds	1
+   136                           	global	DelayMs@cnt
+   137  0021                     DelayMs@cnt:	; 1 bytes @ 0x1
+   138  0021                     	ds	1
+   139                           	global	DelayMs@i
+   140  0022                     DelayMs@i:	; 1 bytes @ 0x2
+   141  0022                     	ds	1
+   142                           	global	DelayMs@_dcnt
+   143  0023                     DelayMs@_dcnt:	; 1 bytes @ 0x3
+   144  0023                     	ds	1
+   145                           	global	??_main
+   146  0024                     ??_main:	; 0 bytes @ 0x4
+   147 ;;Data sizes: Strings 0, constant 0, data 0, bss 0, persistent 0 stack 0
+   148 ;;Auto spaces:   Size  Autos    Used
+   149 ;; COMMON          14      8       8
+   150 ;; BANK0           80      4       4
+   151 ;; BANK1           80      0       0
+   152 ;; BANK3           96      0       0
+   153 ;; BANK2           96      0       0
+   154                           
+   155 ;;
+   156 ;; Pointer list with targets:
+   157                           
+   158                           
+   159                           
+   160 ;;
+   161 ;; Critical Paths under _main in COMMON
+   162 ;;
+   163 ;;   None.
+   164 ;;
+   165 ;; Critical Paths under _abc in COMMON
+   166 ;;
+   167 ;;   _abc->i1_DelayMs
+   168 ;;
+   169 ;; Critical Paths under _main in BANK0
+   170 ;;
+   171 ;;   _main->_DelayMs
+   172 ;;
+   173 ;; Critical Paths under _abc in BANK0
+   174 ;;
+   175 ;;   None.
+   176 ;;
+   177 ;; Critical Paths under _main in BANK1
+   178 ;;
+   179 ;;   None.
+   180 ;;
+   181 ;; Critical Paths under _abc in BANK1
+   182 ;;
+   183 ;;   None.
+   184 ;;
+   185 ;; Critical Paths under _main in BANK3
+   186 ;;
+   187 ;;   None.
+   188 ;;
+   189 ;; Critical Paths under _abc in BANK3
+   190 ;;
+   191 ;;   None.
+   192 ;;
+   193 ;; Critical Paths under _main in BANK2
+   194 ;;
+   195 ;;   None.
+   196 ;;
+   197 ;; Critical Paths under _abc in BANK2
+   198 ;;
+   199 ;;   None.
+   200                           
+   201 ;;
+   202 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
+   203 ;;
+   204                           
+   205 ;;
+   206 ;;Call Graph Tables:
+   207 ;;
+   208 ;; ---------------------------------------------------------------------------------
+   209 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   210 ;; ---------------------------------------------------------------------------------
+   211 ;; (0) _main                                                 0     0      0      68
+   212 ;;                      _interrupt_ini
+   213 ;;                            _DelayMs
+   214 ;; ---------------------------------------------------------------------------------
+   215 ;; (1) _interrupt_ini                                        0     0      0       0
+   216 ;; ---------------------------------------------------------------------------------
+   217 ;; (1) _DelayMs                                              4     4      0      68
+   218 ;;                                              0 BANK0      4     4      0
+   219 ;; ---------------------------------------------------------------------------------
+   220 ;; Estimated maximum stack depth 1
+   221 ;; ---------------------------------------------------------------------------------
+   222 ;; (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+   223 ;; ---------------------------------------------------------------------------------
+   224 ;; (2) _abc                                                  4     4      0     223
+   225 ;;                                              4 COMMON     4     4      0
+   226 ;;                          i1_DelayMs
+   227 ;; ---------------------------------------------------------------------------------
+   228 ;; (3) i1_DelayMs                                            4     4      0     223
+   229 ;;                                              0 COMMON     4     4      0
+   230 ;; ---------------------------------------------------------------------------------
+   231 ;; Estimated maximum stack depth 3
+   232 ;; ---------------------------------------------------------------------------------
+   233                           
+   234 ;; Call Graph Graphs:
+   235                           
+   236 ;; _main (ROOT)
+   237 ;;   _interrupt_ini
+   238 ;;   _DelayMs
+   239 ;;
+   240 ;; _abc (ROOT)
+   241 ;;   i1_DelayMs
+   242 ;;
+   243                           
+   244 ;; Address spaces:
+   245                           
+   246 ;;Name               Size   Autos  Total    Cost      Usage
+   247 ;;BITCOMMON            E      0       0       0        0.0%
+   248 ;;EEDATA             100      0       0       0        0.0%
+   249 ;;NULL                 0      0       0       0        0.0%
+   250 ;;CODE                 0      0       0       0        0.0%
+   251 ;;COMMON               E      8       8       1       57.1%
+   252 ;;BITSFR0              0      0       0       1        0.0%
+   253 ;;SFR0                 0      0       0       1        0.0%
+   254 ;;BITSFR1              0      0       0       2        0.0%
+   255 ;;SFR1                 0      0       0       2        0.0%
+   256 ;;STACK                0      0       5       2        0.0%
+   257 ;;ABS                  0      0       0       3        0.0%
+   258 ;;BITBANK0            50      0       0       4        0.0%
+   259 ;;BITSFR3              0      0       0       4        0.0%
+   260 ;;SFR3                 0      0       0       4        0.0%
+   261 ;;BANK0               50      4       4       5        5.0%
+   262 ;;BITSFR2              0      0       0       5        0.0%
+   263 ;;SFR2                 0      0       0       5        0.0%
+   264 ;;BITBANK1            50      0       0       6        0.0%
+   265 ;;BANK1               50      0       0       7        0.0%
+   266 ;;BITBANK3            60      0       0       8        0.0%
+   267 ;;BANK3               60      0       0       9        0.0%
+   268 ;;BITBANK2            60      0       0      10        0.0%
+   269 ;;BANK2               60      0       0      11        0.0%
+   270 ;;DATA                 0      0       0      12        0.0%
+   271                           
+   272                           	global	_main
+   273                           psect	maintext,global,class=CODE,delta=2
+   274                           global __pmaintext
+   275  0015                     __pmaintext:
+   276                           
+   277 ;; *************** function _main *****************
+   278 ;; Defined at:
+   279 ;;		line 8 in file "F:\Prolific\pic_s\pic_pgm\11  RB0INTERRUPT\main.c"
+   280 ;; Parameters:    Size  Location     Type
+   281 ;;		None
+   282 ;; Auto vars:     Size  Location     Type
+   283 ;;		None
+   284 ;; Return value:  Size  Location     Type
+   285 ;;		None               void
+   286 ;; Registers used:
+   287 ;;		wreg, status,2, status,0, pclath, cstack
+   288 ;; Tracked objects:
+   289 ;;		On entry : 17F/0
+   290 ;;		On exit  : 0/0
+   291 ;;		Unchanged: 0/0
+   292 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   293 ;;      Params:         0       0       0       0       0
+   294 ;;      Locals:         0       0       0       0       0
+   295 ;;      Temps:          0       0       0       0       0
+   296 ;;      Totals:         0       0       0       0       0
+   297 ;;Total ram usage:        0 bytes
+   298 ;; Hardware stack levels required when called:    3
+   299 ;; This function calls:
+   300 ;;		_interrupt_ini
+   301 ;;		_DelayMs
+   302 ;; This function is called by:
+   303 ;;		Startup code after reset
+   304 ;; This function uses a non-reentrant model
+   305 ;;
+   306                           psect	maintext
+   307                           	file	"F:\Prolific\pic_s\pic_pgm\11  RB0INTERRUPT\main.c"
+   308                           	line	8
+   309                           	global	__size_of_main
+   310  002A                     	__size_of_main	equ	__end_of_main-_main
+   311                           	
+   312  0015                     _main:	
+   313                           	opt	stack 5
+   314                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
+   315                           	line	9
+   316                           	
+   317  0015                     l2718:	
+   318                           ;main.c: 9: TRISB=0XFF;
+   319  0015  30FF               	movlw	(0FFh)
+   320  0016  1683               	bsf	status, 5	;RP0=1, select bank1
+   321  0017  1303               	bcf	status, 6	;RP1=0, select bank1
+   322  0018  0086               	movwf	(134)^080h	;volatile
+   323                           	line	10
+   324                           	
+   325  0019                     l2720:	
+   326                           ;main.c: 10: PORTB=0X00;
+   327  0019  1283               	bcf	status, 5	;RP0=0, select bank0
+   328  001A  1303               	bcf	status, 6	;RP1=0, select bank0
+   329  001B  0186               	clrf	(6)	;volatile
+   330                           	line	11
+   331                           	
+   332  001C                     l2722:	
+   333                           ;main.c: 11: TRISD=0X00;
+   334  001C  1683               	bsf	status, 5	;RP0=1, select bank1
+   335  001D  1303               	bcf	status, 6	;RP1=0, select bank1
+   336  001E  0188               	clrf	(136)^080h	;volatile
+   337                           	line	12
+   338                           	
+   339  001F                     l2724:	
+   340                           ;main.c: 12: PORTD=0X00;
+   341  001F  1283               	bcf	status, 5	;RP0=0, select bank0
+   342  0020  1303               	bcf	status, 6	;RP1=0, select bank0
+   343  0021  0188               	clrf	(8)	;volatile
+   344                           	line	13
+   345                           	
+   346  0022                     l2726:	
+   347                           ;main.c: 13: interrupt_ini();
+   348  0022  120A  118A  20A4   	fcall	_interrupt_ini
+              120A  118A         
+   349  0027  2828               	goto	l2728
+   350                           	line	14
+   351                           ;main.c: 14: while(1)
+   352                           	
+   353  0028                     l705:	
+   354                           	line	16
+   355                           	
+   356  0028                     l2728:	
+   357                           ;main.c: 15: {
+   358                           ;main.c: 16: RD0=1;
+   359  0028  1283               	bcf	status, 5	;RP0=0, select bank0
+   360  0029  1303               	bcf	status, 6	;RP1=0, select bank0
+   361  002A  1408               	bsf	(64/8),(64)&7
+   362                           	line	17
+   363                           	
+   364  002B                     l2730:	
+   365                           ;main.c: 17: DelayMs(100);
+   366  002B  3064               	movlw	(064h)
+   367  002C  120A  118A  203F   	fcall	_DelayMs
+              120A  118A         
+   368                           	line	18
+   369                           	
+   370  0031                     l2732:	
+   371                           ;main.c: 18: RD0=0;
+   372  0031  1283               	bcf	status, 5	;RP0=0, select bank0
+   373  0032  1303               	bcf	status, 6	;RP1=0, select bank0
+   374  0033  1008               	bcf	(64/8),(64)&7
+   375                           	line	19
+   376                           	
+   377  0034                     l2734:	
+   378                           ;main.c: 19: DelayMs(100);
+   379  0034  3064               	movlw	(064h)
+   380  0035  120A  118A  203F   	fcall	_DelayMs
+              120A  118A         
+   381  003A  2828               	goto	l2728
+   382                           	line	20
+   383                           	
+   384  003B                     l706:	
+   385                           	line	14
+   386  003B  2828               	goto	l2728
+   387                           	
+   388  003C                     l707:	
+   389                           	line	21
+   390                           	
+   391  003C                     l708:	
+   392                           	global	start
+   393  003C  120A  118A  2812   	ljmp	start
+   394                           	opt stack 0
+   395                           GLOBAL	__end_of_main
+   396  003F                     	__end_of_main:
+   397 ;; =============== function _main ends ============
+   398                           
+   399                           	signat	_main,88
+   400                           	global	_interrupt_ini
+   401                           psect	text140,local,class=CODE,delta=2
+   402                           global __ptext140
+   403  00A4                     __ptext140:
+   404                           
+   405 ;; *************** function _interrupt_ini *****************
+   406 ;; Defined at:
+   407 ;;		line 24 in file "F:\Prolific\pic_s\pic_pgm\11  RB0INTERRUPT\main.c"
+   408 ;; Parameters:    Size  Location     Type
+   409 ;;		None
+   410 ;; Auto vars:     Size  Location     Type
+   411 ;;		None
+   412 ;; Return value:  Size  Location     Type
+   413 ;;		None               void
+   414 ;; Registers used:
+   415 ;;		None
+   416 ;; Tracked objects:
+   417 ;;		On entry : 0/0
+   418 ;;		On exit  : 0/0
+   419 ;;		Unchanged: 0/0
+   420 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   421 ;;      Params:         0       0       0       0       0
+   422 ;;      Locals:         0       0       0       0       0
+   423 ;;      Temps:          0       0       0       0       0
+   424 ;;      Totals:         0       0       0       0       0
+   425 ;;Total ram usage:        0 bytes
+   426 ;; Hardware stack levels used:    1
+   427 ;; Hardware stack levels required when called:    2
+   428 ;; This function calls:
+   429 ;;		Nothing
+   430 ;; This function is called by:
+   431 ;;		_main
+   432 ;; This function uses a non-reentrant model
+   433 ;;
+   434                           psect	text140
+   435                           	file	"F:\Prolific\pic_s\pic_pgm\11  RB0INTERRUPT\main.c"
+   436                           	line	24
+   437                           	global	__size_of_interrupt_ini
+   438  0004                     	__size_of_interrupt_ini	equ	__end_of_interrupt_ini-_interrupt_ini
+   439                           	
+   440  00A4                     _interrupt_ini:	
+   441                           	opt	stack 5
+   442                           ; Regs used in _interrupt_ini: []
+   443                           	line	25
+   444                           	
+   445  00A4                     l2698:	
+   446                           ;main.c: 25: GIE=1;
+   447  00A4  178B               	bsf	(95/8),(95)&7
+   448                           	line	26
+   449                           ;main.c: 26: INTE=1;
+   450  00A5  160B               	bsf	(92/8),(92)&7
+   451                           	line	27
+   452                           ;main.c: 27: INTF=0;
+   453  00A6  108B               	bcf	(89/8),(89)&7
+   454                           	line	28
+   455                           	
+   456  00A7                     l711:	
+   457  00A7  0008               	return
+   458                           	opt stack 0
+   459                           GLOBAL	__end_of_interrupt_ini
+   460  00A8                     	__end_of_interrupt_ini:
+   461 ;; =============== function _interrupt_ini ends ============
+   462                           
+   463                           	signat	_interrupt_ini,88
+   464                           	global	_DelayMs
+   465                           psect	text141,local,class=CODE,delta=2
+   466                           global __ptext141
+   467  003F                     __ptext141:
+   468                           
+   469 ;; *************** function _DelayMs *****************
+   470 ;; Defined at:
+   471 ;;		line 12 in file "F:\Prolific\pic_s\pic_pgm\11  RB0INTERRUPT\delay.c"
+   472 ;; Parameters:    Size  Location     Type
+   473 ;;  cnt             1    wreg     unsigned char 
+   474 ;; Auto vars:     Size  Location     Type
+   475 ;;  cnt             1    1[BANK0 ] unsigned char 
+   476 ;;  _dcnt           1    3[BANK0 ] unsigned char 
+   477 ;;  i               1    2[BANK0 ] unsigned char 
+   478 ;; Return value:  Size  Location     Type
+   479 ;;		None               void
+   480 ;; Registers used:
+   481 ;;		wreg, status,2, status,0
+   482 ;; Tracked objects:
+   483 ;;		On entry : 0/0
+   484 ;;		On exit  : 0/0
+   485 ;;		Unchanged: 0/0
+   486 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   487 ;;      Params:         0       0       0       0       0
+   488 ;;      Locals:         0       3       0       0       0
+   489 ;;      Temps:          0       1       0       0       0
+   490 ;;      Totals:         0       4       0       0       0
+   491 ;;Total ram usage:        4 bytes
+   492 ;; Hardware stack levels used:    1
+   493 ;; Hardware stack levels required when called:    2
+   494 ;; This function calls:
+   495 ;;		Nothing
+   496 ;; This function is called by:
+   497 ;;		_main
+   498 ;;		_delay
+   499 ;; This function uses a non-reentrant model
+   500 ;;
+   501                           psect	text141
+   502                           	file	"F:\Prolific\pic_s\pic_pgm\11  RB0INTERRUPT\delay.c"
+   503                           	line	12
+   504                           	global	__size_of_DelayMs
+   505  0023                     	__size_of_DelayMs	equ	__end_of_DelayMs-_DelayMs
+   506                           	
+   507  003F                     _DelayMs:	
+   508                           	opt	stack 5
+   509                           ; Regs used in _DelayMs: [wreg+status,2+status,0]
+   510                           ;DelayMs@cnt stored from wreg
+   511  003F  1283               	bcf	status, 5	;RP0=0, select bank0
+   512  0040  1303               	bcf	status, 6	;RP1=0, select bank0
+   513  0041  00A1               	movwf	(DelayMs@cnt)
+   514                           	line	21
+   515                           ;delay.c: 20: unsigned char i;
+   516                           ;delay.c: 21: do {
+   517                           	
+   518  0042                     l3:	
+   519                           	line	22
+   520                           	
+   521  0042                     l2682:	
+   522                           ;delay.c: 22: i = 4;
+   523  0042  3004               	movlw	(04h)
+   524  0043  00A0               	movwf	(??_DelayMs+0)+0
+   525  0044  0820               	movf	(??_DelayMs+0)+0,w
+   526  0045  00A2               	movwf	(DelayMs@i)
+   527                           	line	23
+   528                           ;delay.c: 23: do {
+   529                           	
+   530  0046                     l4:	
+   531                           	line	24
+   532                           ;delay.c: 24: { unsigned char _dcnt; _dcnt = (250)/((12*1000L)/(4*1000L))|1; while(--_dc
+                                 nt != 0) continue; };
+   533  0046  3053               	movlw	(053h)
+   534  0047  00A0               	movwf	(??_DelayMs+0)+0
+   535  0048  0820               	movf	(??_DelayMs+0)+0,w
+   536  0049  00A3               	movwf	(DelayMs@_dcnt)
+   537  004A  284C               	goto	l2684
+   538                           	
+   539  004B                     l6:	
+   540  004B  284C               	goto	l2684
+   541                           	
+   542  004C                     l5:	
+   543                           	
+   544  004C                     l2684:	
+   545  004C  3001               	movlw	low(01h)
+   546  004D  02A3               	subwf	(DelayMs@_dcnt),f
+   547  004E  1D03               	btfss	status,2
+   548  004F  2851               	goto	u2331
+   549  0050  2852               	goto	u2330
+   550  0051                     u2331:
+   551  0051  284C               	goto	l2684
+   552  0052                     u2330:
+   553  0052  2853               	goto	l2686
+   554                           	
+   555  0053                     l7:	
+   556                           	line	25
+   557                           	
+   558  0053                     l2686:	
+   559                           ;delay.c: 25: } while(--i);
+   560  0053  3001               	movlw	low(01h)
+   561  0054  02A2               	subwf	(DelayMs@i),f
+   562  0055  1D03               	btfss	status,2
+   563  0056  2858               	goto	u2341
+   564  0057  2859               	goto	u2340
+   565  0058                     u2341:
+   566  0058  2846               	goto	l4
+   567  0059                     u2340:
+   568  0059  285A               	goto	l2688
+   569                           	
+   570  005A                     l8:	
+   571                           	line	26
+   572                           	
+   573  005A                     l2688:	
+   574                           ;delay.c: 26: } while(--cnt);
+   575  005A  3001               	movlw	low(01h)
+   576  005B  02A1               	subwf	(DelayMs@cnt),f
+   577  005C  1D03               	btfss	status,2
+   578  005D  285F               	goto	u2351
+   579  005E  2860               	goto	u2350
+   580  005F                     u2351:
+   581  005F  2842               	goto	l3
+   582  0060                     u2350:
+   583  0060  2861               	goto	l10
+   584                           	
+   585  0061                     l9:	
+   586                           	line	28
+   587                           	
+   588  0061                     l10:	
+   589  0061  0008               	return
+   590                           	opt stack 0
+   591                           GLOBAL	__end_of_DelayMs
+   592  0062                     	__end_of_DelayMs:
+   593 ;; =============== function _DelayMs ends ============
+   594                           
+   595                           	signat	_DelayMs,4216
+   596                           	global	_abc
+   597                           psect	text142,local,class=CODE,delta=2
+   598                           global __ptext142
+   599  0083                     __ptext142:
+   600                           
+   601 ;; *************** function _abc *****************
+   602 ;; Defined at:
+   603 ;;		line 31 in file "F:\Prolific\pic_s\pic_pgm\11  RB0INTERRUPT\main.c"
+   604 ;; Parameters:    Size  Location     Type
+   605 ;;		None
+   606 ;; Auto vars:     Size  Location     Type
+   607 ;;		None
+   608 ;; Return value:  Size  Location     Type
+   609 ;;		None               void
+   610 ;; Registers used:
+   611 ;;		wreg, status,2, status,0, pclath, cstack
+   612 ;; Tracked objects:
+   613 ;;		On entry : 0/0
+   614 ;;		On exit  : 0/0
+   615 ;;		Unchanged: 0/0
+   616 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   617 ;;      Params:         0       0       0       0       0
+   618 ;;      Locals:         0       0       0       0       0
+   619 ;;      Temps:          4       0       0       0       0
+   620 ;;      Totals:         4       0       0       0       0
+   621 ;;Total ram usage:        4 bytes
+   622 ;; Hardware stack levels used:    1
+   623 ;; Hardware stack levels required when called:    1
+   624 ;; This function calls:
+   625 ;;		i1_DelayMs
+   626 ;; This function is called by:
+   627 ;;		Interrupt level 1
+   628 ;; This function uses a non-reentrant model
+   629 ;;
+   630                           psect	text142
+   631                           	file	"F:\Prolific\pic_s\pic_pgm\11  RB0INTERRUPT\main.c"
+   632                           	line	31
+   633                           	global	__size_of_abc
+   634  001D                     	__size_of_abc	equ	__end_of_abc-_abc
+   635                           	
+   636  0083                     _abc:	
+   637                           	opt	stack 5
+   638                           ; Regs used in _abc: [wreg+status,2+status,0+pclath+cstack]
+   639                           psect	intentry,class=CODE,delta=2
+   640                           global __pintentry
+   641  0004                     __pintentry:
+   642                           global interrupt_function
+   643  0004                     interrupt_function:
+   644                           	global saved_w
+   645  007E                     	saved_w	set	btemp+0
+   646  0004  00FE               	movwf	saved_w
+   647  0005  0E03               	swapf	status,w
+   648  0006  00F4               	movwf	(??_abc+0)
+   649  0007  0804               	movf	fsr0,w
+   650  0008  00F5               	movwf	(??_abc+1)
+   651  0009  080A               	movf	pclath,w
+   652  000A  00F6               	movwf	(??_abc+2)
+   653  000B  1283               	bcf	status, 5	;RP0=0, select bank0
+   654  000C  1303               	bcf	status, 6	;RP1=0, select bank0
+   655  000D  087F               	movf	btemp+1,w
+   656  000E  00F7               	movwf	(??_abc+3)
+   657  000F  120A  118A  2883   	ljmp	_abc
+   658                           psect	text142
+   659                           	line	32
+   660                           	
+   661  0083                     i1l2700:	
+   662                           ;main.c: 32: GIE=0;
+   663  0083  138B               	bcf	(95/8),(95)&7
+   664                           	line	33
+   665                           ;main.c: 33: if(INTF==1)
+   666  0084  1C8B               	btfss	(89/8),(89)&7
+   667  0085  2887               	goto	u237_21
+   668  0086  2888               	goto	u237_20
+   669  0087                     u237_21:
+   670  0087  2894               	goto	i1l2708
+   671  0088                     u237_20:
+   672                           	line	35
+   673                           	
+   674  0088                     i1l2702:	
+   675                           ;main.c: 34: {
+   676                           ;main.c: 35: INTF=0;
+   677  0088  108B               	bcf	(89/8),(89)&7
+   678                           	line	36
+   679                           ;main.c: 36: RD1=1;
+   680  0089  1488               	bsf	(65/8),(65)&7
+   681                           	line	37
+   682                           	
+   683  008A                     i1l2704:	
+   684                           ;main.c: 37: DelayMs(100);
+   685  008A  3064               	movlw	(064h)
+   686  008B  120A  118A  2062   	fcall	i1_DelayMs
+              120A  118A         
+   687                           	line	38
+   688                           	
+   689  0090                     i1l2706:	
+   690                           ;main.c: 38: RD1=0;
+   691  0090  1283               	bcf	status, 5	;RP0=0, select bank0
+   692  0091  1303               	bcf	status, 6	;RP1=0, select bank0
+   693  0092  1088               	bcf	(65/8),(65)&7
+   694  0093  2894               	goto	i1l2708
+   695                           	line	39
+   696                           	
+   697  0094                     i1l714:	
+   698                           	line	40
+   699                           	
+   700  0094                     i1l2708:	
+   701                           ;main.c: 39: }
+   702                           ;main.c: 40: GIE=1;
+   703  0094  178B               	bsf	(95/8),(95)&7
+   704                           	line	41
+   705                           	
+   706  0095                     i1l715:	
+   707  0095  0877               	movf	(??_abc+3),w
+   708  0096  00FF               	movwf	btemp+1
+   709  0097  0876               	movf	(??_abc+2),w
+   710  0098  008A               	movwf	pclath
+   711  0099  0875               	movf	(??_abc+1),w
+   712  009A  0084               	movwf	fsr0
+   713  009B  0E74               	swapf	(??_abc+0)^0FFFFFF80h,w
+   714  009C  0083               	movwf	status
+   715  009D  0EFE               	swapf	saved_w,f
+   716  009E  0E7E               	swapf	saved_w,w
+   717  009F  0009               	retfie
+   718                           	opt stack 0
+   719                           GLOBAL	__end_of_abc
+   720  00A0                     	__end_of_abc:
+   721 ;; =============== function _abc ends ============
+   722                           
+   723                           	signat	_abc,88
+   724                           	global	i1_DelayMs
+   725                           psect	text143,local,class=CODE,delta=2
+   726                           global __ptext143
+   727  0062                     __ptext143:
+   728                           
+   729 ;; *************** function i1_DelayMs *****************
+   730 ;; Defined at:
+   731 ;;		line 12 in file "F:\Prolific\pic_s\pic_pgm\11  RB0INTERRUPT\delay.c"
+   732 ;; Parameters:    Size  Location     Type
+   733 ;;  DelayMs         1    wreg     unsigned char 
+   734 ;; Auto vars:     Size  Location     Type
+   735 ;;  DelayMs         1    1[COMMON] unsigned char 
+   736 ;;  DelayMs         1    3[COMMON] unsigned char 
+   737 ;;  DelayMs         1    2[COMMON] unsigned char 
+   738 ;; Return value:  Size  Location     Type
+   739 ;;		None               void
+   740 ;; Registers used:
+   741 ;;		wreg, status,2, status,0
+   742 ;; Tracked objects:
+   743 ;;		On entry : 0/0
+   744 ;;		On exit  : 0/0
+   745 ;;		Unchanged: 0/0
+   746 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   747 ;;      Params:         0       0       0       0       0
+   748 ;;      Locals:         3       0       0       0       0
+   749 ;;      Temps:          1       0       0       0       0
+   750 ;;      Totals:         4       0       0       0       0
+   751 ;;Total ram usage:        4 bytes
+   752 ;; Hardware stack levels used:    1
+   753 ;; This function calls:
+   754 ;;		Nothing
+   755 ;; This function is called by:
+   756 ;;		_abc
+   757 ;; This function uses a non-reentrant model
+   758 ;;
+   759                           psect	text143
+   760                           	file	"F:\Prolific\pic_s\pic_pgm\11  RB0INTERRUPT\delay.c"
+   761                           	line	12
+   762                           	global	__size_ofi1_DelayMs
+   763  0021                     	__size_ofi1_DelayMs	equ	__end_ofi1_DelayMs-i1_DelayMs
+   764                           	
+   765  0062                     i1_DelayMs:	
+   766                           	opt	stack 5
+   767                           ; Regs used in i1_DelayMs: [wreg+status,2+status,0]
+   768                           ;i1DelayMs@cnt stored from wreg
+   769  0062  00F1               	movwf	(i1DelayMs@cnt)
+   770                           	line	21
+   771                           ;delay.c: 20: unsigned char i;
+   772                           ;delay.c: 21: do {
+   773                           	
+   774  0063                     i1l3:	
+   775                           	line	22
+   776                           	
+   777  0063                     i1l2710:	
+   778                           ;delay.c: 22: i = 4;
+   779  0063  3004               	movlw	(04h)
+   780  0064  00F0               	movwf	(??i1_DelayMs+0)+0
+   781  0065  0870               	movf	(??i1_DelayMs+0)+0,w
+   782  0066  00F2               	movwf	(i1DelayMs@i)
+   783                           	line	23
+   784                           ;delay.c: 23: do {
+   785                           	
+   786  0067                     i1l4:	
+   787                           	line	24
+   788                           ;delay.c: 24: { unsigned char _dcnt; _dcnt = (250)/((12*1000L)/(4*1000L))|1; while(--_dc
+                                 nt != 0) continue; };
+   789  0067  3053               	movlw	(053h)
+   790  0068  00F0               	movwf	(??i1_DelayMs+0)+0
+   791  0069  0870               	movf	(??i1_DelayMs+0)+0,w
+   792  006A  00F3               	movwf	(i1DelayMs@_dcnt)
+   793  006B  286D               	goto	i1l2712
+   794                           	
+   795  006C                     i1l6:	
+   796  006C  286D               	goto	i1l2712
+   797                           	
+   798  006D                     i1l5:	
+   799                           	
+   800  006D                     i1l2712:	
+   801  006D  3001               	movlw	low(01h)
+   802  006E  02F3               	subwf	(i1DelayMs@_dcnt),f
+   803  006F  1D03               	btfss	status,2
+   804  0070  2872               	goto	u238_21
+   805  0071  2873               	goto	u238_20
+   806  0072                     u238_21:
+   807  0072  286D               	goto	i1l2712
+   808  0073                     u238_20:
+   809  0073  2874               	goto	i1l2714
+   810                           	
+   811  0074                     i1l7:	
+   812                           	line	25
+   813                           	
+   814  0074                     i1l2714:	
+   815                           ;delay.c: 25: } while(--i);
+   816  0074  3001               	movlw	low(01h)
+   817  0075  02F2               	subwf	(i1DelayMs@i),f
+   818  0076  1D03               	btfss	status,2
+   819  0077  2879               	goto	u239_21
+   820  0078  287A               	goto	u239_20
+   821  0079                     u239_21:
+   822  0079  2867               	goto	i1l4
+   823  007A                     u239_20:
+   824  007A  287B               	goto	i1l2716
+   825                           	
+   826  007B                     i1l8:	
+   827                           	line	26
+   828                           	
+   829  007B                     i1l2716:	
+   830                           ;delay.c: 26: } while(--cnt);
+   831  007B  3001               	movlw	low(01h)
+   832  007C  02F1               	subwf	(i1DelayMs@cnt),f
+   833  007D  1D03               	btfss	status,2
+   834  007E  2880               	goto	u240_21
+   835  007F  2881               	goto	u240_20
+   836  0080                     u240_21:
+   837  0080  2863               	goto	i1l3
+   838  0081                     u240_20:
+   839  0081  2882               	goto	i1l10
+   840                           	
+   841  0082                     i1l9:	
+   842                           	line	28
+   843                           	
+   844  0082                     i1l10:	
+   845  0082  0008               	return
+   846                           	opt stack 0
+   847                           GLOBAL	__end_ofi1_DelayMs
+   848  0083                     	__end_ofi1_DelayMs:
+   849 ;; =============== function i1_DelayMs ends ============
+   850                           
+   851                           	signat	i1_DelayMs,88
+   852                           psect	text144,local,class=CODE,delta=2
+   853                           global __ptext144
+   854  0000                     __ptext144:
+   855                           	global	btemp
+   856  007E                     	btemp set 07Eh
+   857                           
+   858                           	DABS	1,126,2	;btemp
+   859                           	global	wtemp0
+   860  007E                     	wtemp0 set btemp
+
+
+HI-TECH Software PICC Macro Assembler V9.82 build 9453 
+Symbol Table                                                                                   Wed Aug 03 10:10:07 2016
+
+                     l3 0042                       l4 0046                       l5 004C                       l6 004B  
+                     l7 0053                       l8 005A                       l9 0061   __end_of_interrupt_ini 00A8  
+                    l10 0061                      _RD 0C60                      _WR 0C61                     l711 00A7  
+                   l705 0028                     l706 003B                     l707 003C                     l708 003C  
+                   _GIE 005F                     _RD0 0040                     _RD1 0041                     i1l3 0063  
+                   i1l4 0067                     i1l5 006D                     i1l6 006C                     i1l7 0074  
+                   i1l8 007B                     i1l9 0082                     _abc 0083                     fsr0 0004  
+                  ?_abc 0070                    l2720 0019                    l2730 002B                    l2722 001C  
+                  l2732 0031                    l2724 001F                    l2734 0034                    l2726 0022  
+                  l2718 0015                    l2728 0028                    l2682 0042                    l2684 004C  
+                  l2686 0053                    l2688 005A                    l2698 00A4                    u2330 0052  
+                  u2331 0051                    u2340 0059                    u2341 0058                    u2350 0060  
+                  u2351 005F                    i1l10 0082                    _INTE 005C                    _INTF 0059  
+                  _WREN 0C62                    _main 0015                    btemp 007E                    start 0012  
+       __end_of_DelayMs 0062                   ??_abc 0074                   ?_main 0070                   _EEADR 010D  
+                 _CARRY 0018                   i1l714 0094                   i1l715 0095                   _PORTB 0006  
+                 _PORTD 0008                   _TRISB 0086                   _TRISD 0088      __size_ofi1_DelayMs 0021  
+                 pclath 000A                   status 0003                   wtemp0 007E            __end_of_main 003F  
+                ??_main 0024                  _EEDATA 010C                  _EECON1 018C                  _EECON2 018D  
+                i1l2700 0083                  i1l2710 0063                  i1l2702 0088                  i1l2712 006D  
+                i1l2704 008A                  i1l2714 0074                  i1l2706 0090                  i1l2716 007B  
+                i1l2708 0094                  u240_20 0081                  u240_21 0080                  u237_20 0088  
+                u237_21 0087                  u238_20 0073                  u238_21 0072                  u239_20 007A  
+                u239_21 0079               ??_DelayMs 0020       __end_ofi1_DelayMs 0083                  saved_w 007E  
+        __pcstackCOMMON 0070              __pmaintext 0015              __pintentry 0004                 _DelayMs 003F  
+__size_of_interrupt_ini 0004            __size_of_abc 001D    end_of_initialization 00A0               i1_DelayMs 0062  
+         _interrupt_ini 00A4          ?_interrupt_ini 0070              ?i1_DelayMs 0070            DelayMs@_dcnt 0023  
+   start_initialization 00A0             __end_of_abc 00A0          i1DelayMs@_dcnt 0073           __pcstackBANK0 0020  
+              ?_DelayMs 0070            i1DelayMs@cnt 0071         ??_interrupt_ini 0020               __ptext140 00A4  
+             __ptext141 003F               __ptext142 0083               __ptext143 0062               __ptext144 0000  
+             __ptext139 0000             ??i1_DelayMs 0070       interrupt_function 0004                DelayMs@i 0022  
+      __size_of_DelayMs 0023           __size_of_main 002A              DelayMs@cnt 0021                intlevel1 0000  
+            i1DelayMs@i 0072  

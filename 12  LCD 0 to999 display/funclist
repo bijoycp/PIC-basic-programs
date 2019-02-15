@@ -1,0 +1,10 @@
+_LCD_STROBE: CODE, 1400 0 16
+___awdiv: CODE, 1771 0 116
+_lcd_putch: CODE, 1389 0 11
+___awmod: CODE, 1667 0 104
+_main: CODE, 1887 0 161
+_DelayMs: CODE, 1416 0 33
+_lcd_goto: CODE, 1520 0 73
+_send: CODE, 1449 0 71
+_lcd_init: CODE, 1593 0 74
+Total: 659
