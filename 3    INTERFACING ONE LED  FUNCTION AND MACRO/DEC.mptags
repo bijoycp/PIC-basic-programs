@@ -1,0 +1,26 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.5.4	//
+!_TAG_REVISION_NAME	MCHPTags	//
+!_TAG_REVISION_VERSION	6.0.1	//
+DEBUGEN	E:\WAYANAD\PROGRAMS\3    INTERFACING ONE LED  FUNCTION AND MACRO\EFV.C	4;"	v	line:4
+DelayMs	E:\WAYANAD\PROGRAMS\3    INTERFACING ONE LED  FUNCTION AND MACRO\delay.c	11;"	f	line:11	signature:(unsigned char cnt)
+DelayMs	E:\WAYANAD\PROGRAMS\3    INTERFACING ONE LED  FUNCTION AND MACRO\delay.h	50;"	p	line:50	signature:(unsigned char)
+DelayUs::(x){unsignedchar_dcnt;	E:\WAYANAD\PROGRAMS\3    INTERFACING ONE LED  FUNCTION AND MACRO\delay.h	41;"	d	line:41
+DelayUs::(x){unsignedchar_dcnt;	E:\WAYANAD\PROGRAMS\3    INTERFACING ONE LED  FUNCTION AND MACRO\delay.h	47;"	d	line:47
+KHZ::*1	E:\WAYANAD\PROGRAMS\3    INTERFACING ONE LED  FUNCTION AND MACRO\delay.h	34;"	d	line:34
+MHZ::*1000L	E:\WAYANAD\PROGRAMS\3    INTERFACING ONE LED  FUNCTION AND MACRO\delay.h	33;"	d	line:33
+XTAL_FREQ::4MHZ	E:\WAYANAD\PROGRAMS\3    INTERFACING ONE LED  FUNCTION AND MACRO\delay.h	30;"	d	line:30
+delay	E:\WAYANAD\PROGRAMS\3    INTERFACING ONE LED  FUNCTION AND MACRO\delay.c	30;"	f	line:30	signature:(unsigned int dly)
+delay	E:\WAYANAD\PROGRAMS\3    INTERFACING ONE LED  FUNCTION AND MACRO\delay.h	51;"	p	line:51	signature:(unsigned int dly)
+dly1	E:\WAYANAD\PROGRAMS\3    INTERFACING ONE LED  FUNCTION AND MACRO\delay.c	32;"	l	line:32
+i	E:\WAYANAD\PROGRAMS\3    INTERFACING ONE LED  FUNCTION AND MACRO\delay.c	20;"	l	line:20
+led::RD0	E:\WAYANAD\PROGRAMS\3    INTERFACING ONE LED  FUNCTION AND MACRO\EFV.C	3;"	d	line:3	file:
+led_blink	E:\WAYANAD\PROGRAMS\3    INTERFACING ONE LED  FUNCTION AND MACRO\EFV.C	20;"	f	line:20	signature:(void)
+led_blink	E:\WAYANAD\PROGRAMS\3    INTERFACING ONE LED  FUNCTION AND MACRO\EFV.C	6;"	p	line:6	file:	signature:(void)
+main	E:\WAYANAD\PROGRAMS\3    INTERFACING ONE LED  FUNCTION AND MACRO\EFV.C	7;"	f	line:7
+pic_ini	E:\WAYANAD\PROGRAMS\3    INTERFACING ONE LED  FUNCTION AND MACRO\EFV.C	15;"	f	line:15	signature:(void)
+pic_ini	E:\WAYANAD\PROGRAMS\3    INTERFACING ONE LED  FUNCTION AND MACRO\EFV.C	5;"	p	line:5	file:
