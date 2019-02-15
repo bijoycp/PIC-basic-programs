@@ -1,0 +1,27 @@
+_LCD_STROBE: CODE, 273 0 16
+___awdiv: CODE, 803 0 116
+_i2c_nack: CODE, 238 0 11
+_i2c_start: CODE, 198 0 10
+_lcd_putch: CODE, 189 0 9
+_i2c_restart: CODE, 218 0 10
+___ftpack: CODE, 919 0 123
+___awmod: CODE, 701 0 102
+_i2c_Wait: CODE, 228 0 10
+_main: CODE, 1446 0 602
+_rtc_read: CODE, 376 0 50
+___lwtoft: CODE, 349 0 27
+_lcd_clear: CODE, 172 0 8
+_lcd_goto: CODE, 489 0 63
+_i2c_write: CODE, 249 0 11
+_read_adc: CODE, 426 0 63
+_i2c_stop: CODE, 208 0 10
+_i2c_read: CODE, 289 0 17
+___ftmul: CODE, 1208 0 238
+_send: CODE, 552 0 71
+_adc_init: CODE, 180 0 9
+_i2c_init: CODE, 260 0 13
+_pwm1_init: CODE, 306 0 19
+___fttol: CODE, 1042 0 166
+_lcd_init: CODE, 623 0 78
+___bmul: CODE, 325 0 24
+Total: 1876
