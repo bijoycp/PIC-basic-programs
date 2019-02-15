@@ -1,0 +1,13 @@
+_LCD_STROBE: CODE, 1660 0 16
+_lcd_puts: CODE, 1704 0 32
+_lcd_putch: CODE, 1625 0 9
+_sci_init: CODE, 1676 0 28
+_main: CODE, 1839 0 66
+_sci_getch: CODE, 1645 0 15
+_sci_puts: CODE, 1736 0 40
+_sci_putch: CODE, 1634 0 11
+_lcd_clear: CODE, 1617 0 8
+_lcd_goto: CODE, 1776 0 63
+_send: CODE, 1905 0 69
+_lcd_init: CODE, 1974 0 74
+Total: 431
