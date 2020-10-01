@@ -12,6 +12,10 @@ void main()
 		delay(1);	//call function delay for 1 		
 		RD0=0;		//clear RD0 as 0 to off the led
 		delay(1);	//call function delay for 1 
+	    	RD1=1;
+	    	delay(1);
+	    	RD1=0;
+	    	delay(1);
 
 	}
 }
