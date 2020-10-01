@@ -16,6 +16,7 @@ void main()
 	//lcd_goto(1,0);
 	//lcd_puts("adc");
 	//sci_puts("adc");
+	sci_puts("adc_started");
 	while(1)
 	{		
 		ADC_value=read_adc(0);
@@ -32,4 +33,5 @@ void main()
 		//sci_puts("\n");
 		delay(1);
 	}
+	sci_puts("adc_ended");
 }
