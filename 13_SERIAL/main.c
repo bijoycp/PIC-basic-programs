@@ -8,7 +8,8 @@ void main()
 	lcd_init();
 	lcd_clear();
 	lcd_puts("serial data");
-	sci_puts("serial");	
+	sci_puts("serial");
+	sci_puts("Serial data sending....");
 	while(1)
 	{
 		char x=sci_getch();
@@ -16,4 +17,5 @@ void main()
 		lcd_goto(2,0);
 		lcd_putch(x);	
 	}
+	sci_puts("serial data sending stops");
 }
